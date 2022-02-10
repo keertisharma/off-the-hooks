@@ -7,7 +7,7 @@ export const useRegistration = () => {
     const dispatch = useDispatch ();
     const voters = useSelector(selectVoters);
 
-    useEffect(() => {fetchVoters()}, [dispatch]);
+    useEffect(() => {dispatch(fetchVoters())}, [dispatch]);
 
     console.log({voters});
 
