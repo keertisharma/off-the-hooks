@@ -3,7 +3,6 @@
 //import { votersPropType } from './voterToolPropTypes';
 import { SortColHeader } from './SortColHeader';
 import { VoterViewRow } from './VoterViewRow';
-import {EditVoterForm} from "./EditVoterForm";
 import {VoterEditRow} from "./VoterEditRow";
 
 
@@ -29,6 +28,8 @@ export const VoterTable = ({
                              updateVoter,
                              setEditMode,
                              onDelete,
+                             inEditMode,
+                             selectedVoterId
                          }) => {
 
     return (
@@ -43,7 +44,7 @@ export const VoterTable = ({
                 </thead>
                 <tbody>
                 {voters.map(voter =>
-                    voter.id === editVoterId
+                    inEditMode && selectedVoterId === voter.id 
                         ? <VoterEditRow key={voter.id}
                         voter={voter}
                         onCancel={onCancel}

@@ -1,6 +1,3 @@
-import PropTypes from 'prop-types';
-import { useRef, useEffect } from 'react';
-
 //import { carPropType } from '../carToolPropTypes';
 import { useForm } from '../../hooks/useForm';
 
@@ -9,56 +6,49 @@ export const VoterEditRow = ({
                                onCancel,
                                cancelVoter,
                                updateVoter,
+                               onSubmit,
                            }) => {
 
-    const makeControl = useRef();
+    const { id, ...voterFormData } = voter
 
-    useEffect(() => {
+    const { form, change, resetForm } = useForm(voterFormData)
 
-        if (makeControl.current) {
-            makeControl.current.focus();
-        }
+    const submit = () => { 
+        onSubmit(
+            { ...form,
+                id: id }
+            )
+        resetForm()
+     }
 
-    }, []);
+     const cancel = () => {
+         resetForm()
+         onCancel()
+     }
 
-    const [ voterForm, change ] = useForm({
-        first_name: voter.first_name,
-        last_name: voter.last_name,
-        address: voter.address,
-        city: voter.city,
-        birth_date: voter.birth_date,
-        email: voter.email,
-        phone: voter.phone,
-    });
-
-    const saveVoter = () => {
-        updateVoter({
-            ...voterForm,
-            id: voter.id,
-        });
-    };
+    const { first_name, last_name, address, city, birth_date, email, phone } = form
 
 
     return (
         <tr>
-            <td>{voter.id}</td>
-            <td><input type="text" name="first_name" ref={makeControl}
-                       value={voterForm.first_name} onChange={change} /></td>
+            <td>{id}</td>
+            <td><input type="text" name="first_name" 
+                       value={first_name} onChange={change} /></td>
             <td><input type="text" name="last_name"
-                       value={voterForm.last_name} onChange={change} /></td>
+                       value={last_name} onChange={change} /></td>
             <td><input type="text" name="address"
-                       value={voterForm.address} onChange={change} /></td>
+                       value={address} onChange={change} /></td>
             <td><input type="text" name="city"
-                       value={voterForm.city} onChange={change} /></td>
+                       value={city} onChange={change} /></td>
             <td><input type="text" name="birthdate"
-                       value={voterForm.birthdate} onChange={change} /></td>
+                       value={birth_date} onChange={change} /></td>
             <td><input type="text" name="email"
-                       value={voterForm.email} onChange={change} /></td>
+                       value={email} onChange={change} /></td>
             <td><input type="text" name="phone"
-                       value={voterForm.phone} onChange={change} /></td>
+                       value={phone} onChange={change} /></td>
             <td>
-                <button type="button" onClick={saveVoter}>Save</button>
-                <button type="button" onClick={cancelVoter}>Cancel</button>
+                <button type="button" onClick={submit}>Save</button>
+                <button type="button" onClick={cancel}>Cancel</button>
             </td>
         </tr>
     );

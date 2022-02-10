@@ -44,6 +44,7 @@ export const useRegistration = () => {
     }
     const onDelete = (id) => {
         dispatch(deleteVoter(id))
+        dispatch(createResetModeAction())
     }
     const updateVoter = (voterData, id) => {
         const voter = ({
@@ -58,7 +59,6 @@ export const useRegistration = () => {
         dispatch(deleteMultipleVoter(ids))
         dispatch(createResetModeAction())
     }
-
 
     return {
         voters,

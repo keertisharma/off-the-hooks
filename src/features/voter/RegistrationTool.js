@@ -1,4 +1,3 @@
-import { VoterList } from "./VoterList";
 import { AddVoterForm } from "./AddVoterForm";
 
 import "./RegistrationTool.css"
@@ -26,7 +25,7 @@ export const RegistrationTool = () => {
             <div>
                 RegistrationTool
             </div>
-            <VoterList
+            {/* <VoterList
                 voters={voters}
                 setEditMode={setEditMode}
                 inEditMode={inEditMode}
@@ -35,7 +34,7 @@ export const RegistrationTool = () => {
                 onDelete={onDelete}
                 onDeleteMultiple={onDeleteMultiple}
                 updateVoter={updateVoter}
-            />
+            /> */}
             <button
                 type="button"
                 onClick={setAddMode}
