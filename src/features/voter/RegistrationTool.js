@@ -16,6 +16,7 @@ export const RegistrationTool = () => {
         resetMode,
         selectedVoterId,
         registerVoter,
+        onDelete,
         updateVoter,
     } = useRegistration()
 
@@ -30,6 +31,7 @@ export const RegistrationTool = () => {
                 inEditMode={inEditMode}
                 onCancel={resetMode}
                 selectedVoterId={selectedVoterId}
+                onDelete={onDelete}
                 updateVoter={updateVoter}
             />
             <button

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react";
 import { selectMode, selectSortOrder, selectVoters, selectSelectedVoterId } from "./store/selectors"
-import { appendVoter, fetchVoters, replaceVoter } from "./store/thunks";
+import { appendVoter, deleteVoter, fetchVoters , replaceVoter } from "./store/thunks";
 
 import {
     createSetModeAction,
@@ -18,7 +18,9 @@ export const useRegistration = () => {
     const mode = useSelector(selectMode);
     const selectedVoterId = useSelector(selectSelectedVoterId);
 
-    useEffect(() => { dispatch(fetchVoters()) }, [dispatch]);
+    useEffect(() => {
+        dispatch(fetchVoters())
+    }, [dispatch]);
 
     const registerVoter = (voterData) => {
         const voter = ({
@@ -40,8 +42,11 @@ export const useRegistration = () => {
     const resetMode = () => {
         dispatch(createResetModeAction())
     }
-
-    const updateVoter = (voterData,id) => {
+    const onDelete = (id) => {
+        dispatch(deleteVoter(id))
+    }
+    
+        const updateVoter = (voterData,id) => {
         const voter = ({
             ...voterData,
             id: id
@@ -51,7 +56,6 @@ export const useRegistration = () => {
         //dispatch(createResetModeAction())
     }
 
-    console.log({ mode });
 
     return {
         voters,
@@ -63,6 +67,7 @@ export const useRegistration = () => {
         resetMode,
         selectedVoterId,
         registerVoter,
+        onDelete,
         updateVoter
     }
 }

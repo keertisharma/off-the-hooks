@@ -1,9 +1,18 @@
 export const Voter = ({
-    voter:{ id, first_name, last_name, address, city, birth_date, email, phone },
+    voter: {
+        id,
+        first_name,
+        last_name,
+        address,
+        city,
+        birth_date,
+        email,
+        phone,
+    },
     setEditMode,
+    onDelete,
 }) => {
-
-    const Row =  ({ label, value }) => {
+    const Row = ({ label, value }) => {
         return (
             <div className='view-user-row'>
                 <div className='row-key'>{label}:</div>
@@ -23,7 +32,8 @@ export const Voter = ({
             <Row label={"Birth Date"} value={birth_date} />
             <Row label={"Email"} value={email} />
             <Row label={"Phone"} value={phone} />
-            <button type="button" onClick={()=>setEditMode(id)}>edit</button>
+            <button type="button" onClick={() => setEditMode(id)}>edit</button>
+            <button type="button" onClick={() => onDelete(id)}>delete</button>
         </div>
     )
 }
