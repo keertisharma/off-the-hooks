@@ -2,6 +2,7 @@ import { AddElectionForm } from "./AddElectionForm"
 import { ElectionList } from './ElectionList'
 
 import "./ElectionTool.css"
+import { useElections } from './useElections';
 
 export const sample_election = {
     id: 1,
@@ -23,10 +24,13 @@ const sample_elections = [
 ]
 
 export const ElectionTool = () => {
+
+    const { elections } = useElections();
+
     return (
         <div>
             ElectionTool
-            <ElectionList elections={sample_elections}></ElectionList>
+            <ElectionList elections={elections}></ElectionList>
             <AddElectionForm submitText="Submit" onSubmit={() => { }} />
         </div>
     );
