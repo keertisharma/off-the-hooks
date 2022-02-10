@@ -3,7 +3,12 @@
         {
             "id": 1,
             "first_name": "Joe",
-            "last_name": "G.I."
+            "last_name": "G.I.",
+            "address": "2121 Still Ave",
+            "city": "Sad Miego",
+            "birth_date": "1/1/2000",
+            "email": "nobody@nuttin.com",
+            "phone": "555-333-1212"
         }
     ],
     "elections": [

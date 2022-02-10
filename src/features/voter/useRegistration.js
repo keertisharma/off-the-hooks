@@ -1,10 +1,15 @@
-import { useSelector } from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
 import { selectVoters } from "./store/selectors"
+import {fetchVoters} from "./store/thunks";
+import {useEffect} from "react";
 
 export const useRegistration = () => {
-    const voters = useSelector(selectVoters)
+    const dispatch = useDispatch ();
+    const voters = useSelector(selectVoters);
 
-    console.log({voters})
+    useEffect(() => {fetchVoters()}, [dispatch]);
+
+    console.log({voters});
 
     return {
         voters

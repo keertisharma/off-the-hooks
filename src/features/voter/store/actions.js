@@ -1,6 +1,8 @@
 const VOTER_SLICE = 'voter-slice'
 
 export const REGISTER_VOTER = `${VOTER_SLICE}/register-voter`
+export const SET_VOTERS = `${VOTER_SLICE}/set-voters`
+
 export const UPDATE_VOTER = `${VOTER_SLICE}/update-voter`
 export const DELETE_VOTER = `${VOTER_SLICE}/delete-voter`
 export const DELETE_MULTIPLE_VOTERS = `${VOTER_SLICE}/delete-multiple-voters`
@@ -10,6 +12,12 @@ export const SET_SORT_ORDER = `${VOTER_SLICE}/set-sort-order`
 export const createRegisterVoterAction = (voterData) => ({
     type: REGISTER_VOTER,
     payload: { voterData }
+})
+
+// votersData: [{first_name, last_name, ....}]
+export const createSetVotersAction = (votersData) => ({
+    type: SET_VOTERS,
+    payload: { votersData }
 })
 
 // id: ID, voterData: {first_name, last_name, ....}

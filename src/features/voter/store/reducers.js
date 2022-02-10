@@ -1,8 +1,15 @@
 import { nanoid } from "nanoid";
-import { DELETE_MULTIPLE_VOTERS, DELETE_VOTER, REGISTER_VOTER, SET_SORT_ORDER, UPDATE_VOTER } from "./actions";
+import {
+    DELETE_MULTIPLE_VOTERS,
+    DELETE_VOTER,
+    REGISTER_VOTER,
+    SET_SORT_ORDER,
+    SET_VOTERS,
+    UPDATE_VOTER
+} from "./actions";
 
 const initialState = {
-    voters: [{id:1,first_name:'Joe'}],
+    voters: [],
     sortOrder: { field: null, direction: 1 },
 }
 
@@ -18,6 +25,13 @@ export const voterReducer = (state = initialState, action) => {
                         id: nanoid(),
                     }
                 ]
+            }
+        case SET_VOTERS:
+            console.log(action.payload);
+
+            return {
+                ...state,
+                voters: action.payload.votersData,
             }
         case UPDATE_VOTER:
             return {
