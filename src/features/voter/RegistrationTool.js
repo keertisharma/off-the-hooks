@@ -3,6 +3,7 @@ import { AddVoterForm } from "./AddVoterForm";
 import { EditVoterForm } from "./EditVoterForm";
 
 import "./RegistrationTool.css"
+import { useRegistration } from "./useRegistration";
 
 export const sample_voter = {
     id: 1,
@@ -24,12 +25,14 @@ const sample_voters = [
 ]
 
 export const RegistrationTool = () => {
+    const {voters} = useRegistration()
+
     return (
         <div>
             <div>
                 RegistrationTool
             </div>
-            <VoterList voters={sample_voters} />
+            <VoterList voters={[...sample_voters, ...voters]} />
             <AddVoterForm submitText="Submit" onSubmit={() => { }}></AddVoterForm>
             <EditVoterForm voter={sample_voter} submitText="Submit" onSubmit={() => { }}></EditVoterForm>
         </div>

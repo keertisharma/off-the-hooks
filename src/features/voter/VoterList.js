@@ -1,6 +1,8 @@
 import { Voter } from "./Voter"
 
 export const VoterList = ({ voters }) => {
+    console.log({voters})
+    
     return (
         <div>
             VOTER LIST
