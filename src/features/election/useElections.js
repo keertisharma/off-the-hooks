@@ -7,8 +7,8 @@ import {
     selectSelectedElectionId,
 } from "./store/selectors"
 import { nanoid } from "nanoid"
-import { createSetModeAction } from "../voter/store/actions"
-import { fetchElections } from "./store/thunks"
+import { createSetViewModeAction, createResetModeAction } from "../election/store/actions"
+import { appendElections, fetchElections } from "./store/thunks"
 
 
 export const useElections = () => {
@@ -23,18 +23,20 @@ export const useElections = () => {
     }, [dispatch])
 
     const createElection = (electionData) => {
-        const election = ({
+        const elections = ({
             ...electionData,
             id: nanoid()
         })
+        dispatch(appendElections(elections))
+        dispatch(createResetModeAction())
     }
 
     const setAddMode = () => {
-        dispatch(createSetModeAction('add'))
+        dispatch(createSetViewModeAction('add'))
     }
 
     const resetMode = () => {
-        dispatch(createSetModeAction(null))
+        dispatch(createSetViewModeAction(null))
     }
 
     return {
