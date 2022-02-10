@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
-import { votersPropType } from './voterToolPropTypes';
+//import { votersPropType } from './voterToolPropTypes';
 import { SortColHeader } from './SortColHeader';
 import { VoterViewRow } from './VoterViewRow';
 import {EditVoterForm} from "./EditVoterForm";
@@ -50,22 +50,22 @@ export const VoterTable = ({
 
 }
 
-VoterTable.defaultProps = {
-    voters: [],
-    votersSort: {
-        column: 'id', direction: 1,
-    },
-};
+// VoterTable.defaultProps = {
+//     voters: [],
+//     votersSort: {
+//         column: 'id', direction: 1,
+//     },
+// };
 
-VoterTable.propTypes = {
-    voters: votersPropType.isRequired,
-    votersSort: PropTypes.shape({
-        column: PropTypes.string.isRequired,
-        direction: PropTypes.string.isRequired,
-    }).isRequired,
-    onSortVoters: PropTypes.func.isRequired,
-    onEditVoter: PropTypes.func.isRequired,
-    onDeleteVoter: PropTypes.func.isRequired,
-    onSaveVoter: PropTypes.func.isRequired,
-    onCancelVoter: PropTypes.func.isRequired,
-};
+// VoterTable.propTypes = {
+//     voters: votersPropType.isRequired,
+//     votersSort: PropTypes.shape({
+//         column: PropTypes.string.isRequired,
+//         direction: PropTypes.string.isRequired,
+//     }).isRequired,
+//     onSortVoters: PropTypes.func.isRequired,
+//     onEditVoter: PropTypes.func.isRequired,
+//     onDeleteVoter: PropTypes.func.isRequired,
+//     onSaveVoter: PropTypes.func.isRequired,
+//     onCancelVoter: PropTypes.func.isRequired,
+// };

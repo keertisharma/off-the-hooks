@@ -4,6 +4,7 @@ import { EditVoterForm } from "./EditVoterForm";
 
 import "./RegistrationTool.css"
 import { useRegistration } from "./useRegistration";
+import { VoterTable } from "./VotersTable";
 
 export const RegistrationTool = () => {
     const {
@@ -48,6 +49,14 @@ export const RegistrationTool = () => {
                     onCancel={resetMode}
                 />
             }
+
+            <VoterTable voters={voters}
+                setEditMode={setEditMode}
+                inEditMode={inEditMode}
+                onCancel={resetMode}
+                selectedVoterId={selectedVoterId}
+                onDelete={onDelete}
+                updateVoter={updateVoter} />
         </div>
 
     );

@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import { memo } from 'react';
 
-import { voterPropType } from './voterToolPropTypes';
+//import { voterPropType } from './voterToolPropTypes';
 
 export const VoterViewRow = memo(({
                                     voter,
@@ -33,8 +33,8 @@ export const VoterViewRow = memo(({
 
 });
 
-VoterViewRow.propTypes = {
-    voter: voterPropType.isRequired,
-    onEditVoter: PropTypes.func.isRequired,
-    onDeleteVoter: PropTypes.func.isRequired,
-};
+// VoterViewRow.propTypes = {
+//     voter: voterPropType.isRequired,
+//     onEditVoter: PropTypes.func.isRequired,
+//     onDeleteVoter: PropTypes.func.isRequired,
+// };

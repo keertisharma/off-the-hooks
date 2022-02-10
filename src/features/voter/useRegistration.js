@@ -46,14 +46,14 @@ export const useRegistration = () => {
         dispatch(deleteVoter(id))
     }
     
-        const updateVoter = (voterData,id) => {
+    const updateVoter = (voterData,id) => {
         const voter = ({
             ...voterData,
             id: id
         })
         console.log({voterData, voter})
         dispatch(replaceVoter(voterData))
-        //dispatch(createResetModeAction())
+        dispatch(createResetModeAction())
     }
 
 

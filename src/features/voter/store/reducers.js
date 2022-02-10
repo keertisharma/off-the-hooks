@@ -14,7 +14,7 @@ import {
 const DEFAULT_MODE = 'default'
 const initialState = {
     voters: [],
-    sortOrder: { field: null, direction: 1 },
+    sortOrder: { column: null, direction: 1 },
     mode: DEFAULT_MODE,
     selectedVoterId: null,
 }
