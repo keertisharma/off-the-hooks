@@ -9,10 +9,10 @@ export const VoterList = ({
     onCancel,
     selectedVoterId,
     onDelete,
-    onDeleteMany,
+    onDeleteMultiple,
     updateVoter,
 }) => {
-    console.log({ onDeleteMany })
+    console.log({ onDeleteMultiple })
 
     const [selectedVoterIds, setSelectedVoterIds] = useState([])
 
@@ -26,7 +26,7 @@ export const VoterList = ({
     }
 
     const deleteSelected = () => {
-        onDeleteMany(selectedVoterIds)
+        onDeleteMultiple(selectedVoterIds)
     }
 
     return (

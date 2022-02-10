@@ -1,5 +1,16 @@
 {
-  "voters": [],
+  "voters": [
+    {
+      "first_name": "a",
+      "last_name": "v",
+      "address": "",
+      "city": "",
+      "birth_date": "",
+      "email": "",
+      "phone": "",
+      "id": "65Js35HMMQOBW5bdrHG3C"
+    }
+  ],
   "elections": [
     {
       "id": 1,
