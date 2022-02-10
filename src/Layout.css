@@ -1,0 +1,158 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+body {
+    font-family: sans-serif;
+    font-size: 100%;
+}
+
+.container {
+    position: fixed; /* take up full viewport */
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    display: grid;
+
+    grid-template-rows: 4rem 2rem 1fr 2rem; /*fr: fractional unit; meaning - take up remaining space*/
+    grid-template-columns: 4fr 1fr;
+
+    grid-template-areas:
+    "header header"
+    "menu menu"
+    "content sidebar"
+    "footer footer";
+}
+
+#page-header, #page-footer {
+    background-color: navy;
+    color: white;
+}
+
+#page-header {
+    grid-area: header;
+    display: flex; /* use flexbox for 1 directional layout */
+    flex-direction: row; /*this can be row or column */
+    justify-content: flex-start; /*major axis */
+    align-items: center; /*minor axis */
+    padding-left: 20px;
+}
+
+#page-header > h1 {
+    font-size: 2rem;
+}
+
+#main-menu {
+    grid-area: menu;
+    background-color: lightgray;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+#main-menu > ul {
+    display: flex;
+    flex-direction: row;
+
+}
+
+#main-menu li {
+    margin: 4px;
+}
+
+#main-menu li > a, 
+#main-menu li > a:visited, 
+#main-menu li > a:active {
+    color: black;
+    text-decoration: none;
+}
+
+#main-menu li > a:hover {
+    text-decoration: underline;
+}
+
+#content {
+    grid-area: content;
+    padding: 10px 20px 10px 20px; /* top right bottom left */
+}
+
+#sidebar {
+    grid-area: sidebar;
+    background-color: orange;
+    padding: 10px 20px; /* top/ootom left/right */
+}
+
+#page-footer {
+    grid-area: footer;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#page-footer > small {
+    font-size: 0.8rem;
+}
+
+#table {
+    justify-content: center;
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+#table-head {
+    background-color: grey;
+    color: white;
+}
+
+tr,td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px 15px;
+}
+  
+

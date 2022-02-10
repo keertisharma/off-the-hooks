@@ -1,16 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-import {VotingTool} from "./features/ballot/VotingTool";
-import {RegistrationTool} from "./features/voter/RegistrationTool";
-import {ElectionTool} from "./features/election/ElectionTool";
+import logo from "./logo.svg";
+import "./App.css";
+import { VotingTool } from "./features/ballot/VotingTool";
+import { RegistrationTool } from "./features/voter/RegistrationTool";
+import { ElectionTool } from "./features/election/ElectionTool";
+import { Routes, Route } from "react-router-dom";
+import { Layout } from "./Layout";
 
 function App() {
   return (
-    <div>
-      <VotingTool/>
-      <RegistrationTool/>
-      <ElectionTool/>
-    </div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="voting-tool" element={<VotingTool />} />
+          <Route path="registration-tool" element={<RegistrationTool />} />
+          <Route path="election-tool" element={<ElectionTool />} />
+        </Route>
+      </Routes>
   );
 }
 
