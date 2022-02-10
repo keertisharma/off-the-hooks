@@ -1,53 +1,73 @@
-import { useForm } from "../../hooks/useForm"
+import PropTypes from 'prop-types';
+import { useRef, useEffect } from 'react';
 
-export const EditVoterForm = ({ voter, onSubmit, onCancel }) => {
-    const { id, ...voterFormData } = voter
+//import { carPropType } from '../carToolPropTypes';
+import { useForm } from '../../hooks/useForm';
 
-    const { form, change, resetForm } = useForm(voterFormData)
+export const VoterEditRow = ({
+                               voter,
+                               onCancel,
+                               updateVoter,
+                           }) => {
 
-    const submit = () => { 
-        onSubmit(
-            { ...form,
-                id: id }
-            )
-        resetForm()
-     }
+    const makeControl = useRef();
 
-     const cancel = () => {
-         resetForm()
-         onCancel()
-     }
+    useEffect(() => {
 
-    const { first_name, last_name, address, city, birth_date, email, phone } = form
+        if (makeControl.current) {
+            makeControl.current.focus();
+        }
+
+    }, []);
+
+    const [ voterForm, change ] = useForm({
+        first_name: voter.first_name,
+        last_name: voter.last_name,
+        address: voter.address,
+        city: voter.city,
+        birth_date: voter.birth_date,
+        email: voter.email,
+        phone: voter.phone,
+    });
+
+    const saveVoter = () => {
+        updateVoter({
+            ...voterForm,
+            id: voter.id,
+        });
+    };
+
 
     return (
-        <div>
-            ADD VOTER
-            <div>ID: {id}</div>
-            <label>First Name
-                <input name={'first_name'} value={first_name} onChange={change} />
-            </label>
-            <label>Last Name
-                <input name={'last_name'} value={last_name} onChange={change} />
-            </label>
-            <label>Address
-                <input name={'address'} value={address} onChange={change} />
-            </label>
-            <label>City
-                <input name={'city'} value={city} onChange={change} />
-            </label>
-            <label>Birth Date
-                <input name={'birth_date'} value={birth_date} onChange={change} />
-            </label>
-            <label>Email
-                <input name={'email'} value={email} onChange={change} />
-            </label>
-            <label>Phone
-                <input name={'phone'} value={phone} onChange={change} />
-            </label>
+        <tr>
+            <td>{voter.id}</td>
+            <td><input type="text" name="first_name" ref={makeControl}
+                       value={voterForm.first_name} onChange={change} /></td>
+            <td><input type="text" name="last_name"
+                       value={voterForm.last_name} onChange={change} /></td>
+            <td><input type="text" name="address"
+                       value={voterForm.address} onChange={change} /></td>
+            <td><input type="text" name="city"
+                       value={voterForm.city} onChange={change} /></td>
+            <td><input type="text" name="birthdate"
+                       value={voterForm.birthdate} onChange={change} /></td>
+            <td><input type="text" name="email"
+                       value={voterForm.email} onChange={change} /></td>
+            <td><input type="text" name="phone"
+                       value={voterForm.phone} onChange={change} /></td>
+            <td>
+                <button type="button" onClick={saveVoter}>Save</button>
+                <button type="button" onClick={cancelVoter}>Cancel</button>
+            </td>
+        </tr>
+    );
 
-            <button type="button" onClick={submit}>Submit</button>
-            <button type="button" onClick={cancel}>Cancel</button>
-        </div>
-    )
-}
+
+};
+
+// CarEditRow.propTypes = {
+//     car: carPropType.isRequired,
+//     onSaveCar: PropTypes.func.isRequired,
+//     onCancelCar: PropTypes.func.isRequired,
+// };
+

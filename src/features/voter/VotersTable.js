@@ -4,6 +4,7 @@
 import { SortColHeader } from './SortColHeader';
 import { VoterViewRow } from './VoterViewRow';
 import {EditVoterForm} from "./EditVoterForm";
+import {VoterEditRow} from "./VoterEditRow";
 
 
 const cols = [
@@ -43,7 +44,7 @@ export const VoterTable = ({
                 <tbody>
                 {voters.map(voter =>
                     voter.id === editVoterId
-                        ? <EditVoterForm key={voter.id}
+                        ? <VoterEditRow key={voter.id}
                         voter={voter}
                         onCancel={onCancel}
                         onSubmit={updateVoter} />
