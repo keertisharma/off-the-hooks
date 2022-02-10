@@ -1,35 +1,50 @@
 import { useForm } from "../../hooks/useForm"
 
-export const EditVoterForm = ({ voter, submitText, onSubmit }) => {
-    const {id, ...voterFormData }= voter
+export const EditVoterForm = ({ voter, onSubmit, onCancel }) => {
+    const { id, ...voterFormData } = voter
 
-    const { form, change } = useForm(voterFormData)
+    const { form, change, resetForm } = useForm(voterFormData)
+
+    const submit = () => { 
+        onSubmit({ ...form })
+        resetForm()
+     }
+
+     const cancel = () => {
+         resetForm()
+         onCancel()
+     }
 
     const { first_name, last_name, address, city, birth_date, email, phone } = form
 
-    const Row = ({ label, name, value }) => {
-        const id = `edit-user-form-row-${name}`
-        
-        return (
-            <div className="edit-user-form-row">
-                <label htmlFor={id}>{label}</label>
-                <input name={name} value={value} id={id} onChange={change} />
-            </div>
-        )
-    }
-
     return (
         <div>
-            EDIT VOTER
-            <Row label="First Name" name="first_name" value={first_name} />
-            <Row label="Last Name" name="last_name" value={last_name} />
-            <Row label="Address" name="address" value={address} />
-            <Row label="City" name="city" value={city} />
-            <Row label="Birth Date" name="birth_date" value={birth_date} />
-            <Row label="Email" name="email" value={email} />
-            <Row label="Phone" name="phone" value={phone} />
+            ADD VOTER
+            <div>ID: {id}</div>
+            <label>First Name
+                <input name={'first_name'} value={first_name} onChange={change} />
+            </label>
+            <label>Last Name
+                <input name={'last_name'} value={last_name} onChange={change} />
+            </label>
+            <label>Address
+                <input name={'address'} value={address} onChange={change} />
+            </label>
+            <label>City
+                <input name={'city'} value={city} onChange={change} />
+            </label>
+            <label>Birth Date
+                <input name={'birth_date'} value={birth_date} onChange={change} />
+            </label>
+            <label>Email
+                <input name={'email'} value={email} onChange={change} />
+            </label>
+            <label>Phone
+                <input name={'phone'} value={phone} onChange={change} />
+            </label>
 
-            <button type="button" onSubmit={onSubmit}>{submitText}</button>
+            <button type="button" onClick={submit}>Submit</button>
+            <button type="button" onClick={cancel}>Cancel</button>
         </div>
     )
 }

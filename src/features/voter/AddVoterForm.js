@@ -10,10 +10,18 @@ const initialForm = {
     phone: '',
 }
 
-export const AddVoterForm = ({ submitText, onSubmit }) => {
-    const { form, change } = useForm(initialForm)
+export const AddVoterForm = ({ onSubmit, onCancel }) => {
+    const { form, change, resetForm } = useForm(initialForm)
 
-    console.log({form})
+    const submit = () => { 
+        onSubmit({ ...form })
+        resetForm()
+     }
+
+     const cancel = () => {
+         onCancel()
+         resetForm()
+     }
 
     const { first_name, last_name, address, city, birth_date, email, phone } = form
 
@@ -42,7 +50,8 @@ export const AddVoterForm = ({ submitText, onSubmit }) => {
                 <input name={'phone'} value={phone} onChange={change} />
             </label>
 
-            <button type="button" onSubmit={onSubmit}>{submitText}</button>
+            <button type="button" onClick={submit}>Submit</button>
+            <button type="button" onClick={cancel}>Cancel</button>
         </div>
     )
 }

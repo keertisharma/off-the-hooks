@@ -27,10 +27,7 @@ export const useRegistration = () => {
         // createUpdateVoterAction,
         // createDeleteVoterAction,
         // createDeleteMultipleVotersAction,
-        createSetSortOrderAction,
-        createSetModeAction,
-        createResetModeAction,
-        createSetSelectedVoterIdAction,
+        // createResetModeAction,
     }, dispatch), [dispatch])
 
     const voters = useSelector(selectVoters);
@@ -47,6 +44,7 @@ export const useRegistration = () => {
         })
         console.log({voterData, voter})
         dispatch(appendVoter(voter))
+        dispatch(createResetModeAction())
     }
 
     const setAddMode = () => {
@@ -55,6 +53,9 @@ export const useRegistration = () => {
     const setEditMode = (id) => {
         dispatch(createSetModeAction('edit'))
         dispatch(createSetSelectedVoterIdAction(id))
+    }
+    const resetMode = () => {
+        dispatch(createResetModeAction())
     }
 
     console.log({ mode });
@@ -67,6 +68,7 @@ export const useRegistration = () => {
         inAddMode: mode === 'add',
         setAddMode,
         setEditMode,
+        resetMode,
         selectedVoterId,
         registerVoter,
     }

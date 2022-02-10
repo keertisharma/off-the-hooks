@@ -1,4 +1,7 @@
-export const Voter = ({voter:{ id, first_name, last_name, address, city, birth_date, email, phone }}) => {
+export const Voter = ({
+    voter:{ id, first_name, last_name, address, city, birth_date, email, phone },
+    setEditMode,
+}) => {
 
     const Row =  ({ label, value }) => {
         return (
@@ -20,6 +23,7 @@ export const Voter = ({voter:{ id, first_name, last_name, address, city, birth_d
             <Row label={"Birth Date"} value={birth_date} />
             <Row label={"Email"} value={email} />
             <Row label={"Phone"} value={phone} />
+            <button type="button" onClick={()=>setEditMode(id)}>edit</button>
         </div>
     )
 }

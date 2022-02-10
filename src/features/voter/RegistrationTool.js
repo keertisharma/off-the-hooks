@@ -13,6 +13,7 @@ export const RegistrationTool = () => {
         setAddMode,
         inEditMode,
         setEditMode,
+        resetMode,
         selectedVoterId,
         registerVoter,
     } = useRegistration()
@@ -22,13 +23,27 @@ export const RegistrationTool = () => {
             <div>
                 RegistrationTool
             </div>
-            <VoterList voters={voters} />
-            <button type="button" onClick={setAddMode}>Add Voter</button>
+            <VoterList
+                voters={voters}
+                setEditMode={setEditMode}
+                inEditMode={inEditMode}
+                onCancel={resetMode}
+                selectedVoterId={selectedVoterId}
+            />
+            <button
+                type="button"
+                onClick={setAddMode}
+            >
+                Add Voter
+            </button>
 
             {inAddMode &&
-                <AddVoterForm submitText="Submit" onSubmit={registerVoter}></AddVoterForm>
+                <AddVoterForm
+                    submitText="Submit"
+                    onSubmit={registerVoter}
+                    onCancel={resetMode}
+                />
             }
-            {/*<EditVoterForm voter={voters[0]} submitText="Submit" onSubmit={() => { }}></EditVoterForm>*/}
         </div>
 
     );

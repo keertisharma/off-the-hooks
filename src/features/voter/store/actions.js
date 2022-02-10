@@ -60,7 +60,7 @@ export const createResetModeAction = () => ({
 })
 
 // voterId: ID
-export const createSetSelectedVoterIdAction = (voterId) => ({
+export const createSetSelectedVoterIdAction = (selectedVoterId) => ({
     type: SET_SELECTED_VOTER_ID,
-    payload: { voterId }
+    payload: { selectedVoterId }
 })
