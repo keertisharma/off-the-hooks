@@ -3,7 +3,9 @@
 //import { votersPropType } from './voterToolPropTypes';
 import { SortColHeader } from './SortColHeader';
 import { VoterViewRow } from './VoterViewRow';
-import {VoterEditRow} from "./VoterEditRow";
+import { VoterEditRow } from "./VoterEditRow";
+import { EditVoterForm } from "./EditVoterForm";
+import { useState } from 'react';
 
 
 const cols = [
@@ -28,22 +30,56 @@ export const VoterTable = ({
                              updateVoter,
                              setEditMode,
                              onDelete,
-                             inEditMode,
+    inEditMode,
                              selectedVoterId
-                         }) => {
+    onDeleteMultiple,
+}) => {
+
+    const [selectedVoterIds, setSelectedVoterIds] = useState([])
+
+    const onSelect = (iClicked) => {
+        const voterId = voters[iClicked].id
+        const newSelections = selectedVoterIds.includes(voterId) ?
+            selectedVoterIds.filter(id => id !== voterId) :
+            [...selectedVoterIds, voterId]
+
+        setSelectedVoterIds(newSelections)
+    }
+
+    const deleteSelected = () => {
+        onDeleteMultiple(selectedVoterIds)
+    }
+
+    const selector = (voter, i) => {
+        return !inEditMode && <input
+            type="checkbox"
+            value={selectedVoterIds.includes(voter.id)}
+            onChange={() =>
+                onSelect(i)
+            }
+        />
+    }
 
     return (
         <form>
+            <button
+                type="button"
+                disabled={selectedVoterIds.length === 0}
+                onClick={deleteSelected}
+            >Delete Selected</button>
             <table>
                 <thead>
                 <tr>
-                    {cols.map( (col, i) => <SortColHeader key={i}
+                        {!inEditMode &&
+                            <th>Select</th>
+                        }
+                        {cols.map((col, i) => <SortColHeader key={i}
                                                           col={col} sortInfo={votersSort} onSort={sortVoters} />)}
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                {voters.map(voter =>
+                {voters.map((voter, i) =>
                     inEditMode && selectedVoterId === voter.id 
                         ? <VoterEditRow key={voter.id}
                         voter={voter}
@@ -53,7 +89,9 @@ export const VoterTable = ({
                             key={voter.id}
                             voter={voter}
                             setEditMode={setEditMode}
-                            onDelete={onDelete} />)}
+                                onDelete={onDelete}
+                                selector={selector(voter, i)}
+                            />)}
                 </tbody>
             </table>
         </form>
