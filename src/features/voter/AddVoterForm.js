@@ -13,29 +13,34 @@ const initialForm = {
 export const AddVoterForm = ({ submitText, onSubmit }) => {
     const { form, change } = useForm(initialForm)
 
-    const { first_name, last_name, address, city, birth_date, email, phone } = form
+    console.log({form})
 
-    const Row = ({ label, name, value }) => {
-        const id = `add-user-form-row-${name}`
-        
-        return (
-            <div className="add-user-form-row">
-                <label htmlFor={id}>{label}</label>
-                <input name={name} value={value} id={id} onChange={change} />
-            </div>
-        )
-    }
+    const { first_name, last_name, address, city, birth_date, email, phone } = form
 
     return (
         <div>
             ADD VOTER
-            <Row label="First Name" name="first_name" value={first_name} />
-            <Row label="Last Name" name="last_name" value={last_name} />
-            <Row label="Address" name="address" value={address} />
-            <Row label="City" name="city" value={city} />
-            <Row label="Birth Date" name="birth_date" value={birth_date} />
-            <Row label="Email" name="email" value={email} />
-            <Row label="Phone" name="phone" value={phone} />
+            <label>First Name
+                <input name={'first_name'} value={first_name} onChange={change} />
+            </label>
+            <label>Last Name
+                <input name={'last_name'} value={last_name} onChange={change} />
+            </label>
+            <label>Address
+                <input name={'address'} value={address} onChange={change} />
+            </label>
+            <label>City
+                <input name={'city'} value={city} onChange={change} />
+            </label>
+            <label>Birth Date
+                <input name={'birth_date'} value={birth_date} onChange={change} />
+            </label>
+            <label>Email
+                <input name={'email'} value={email} onChange={change} />
+            </label>
+            <label>Phone
+                <input name={'phone'} value={phone} onChange={change} />
+            </label>
 
             <button type="button" onSubmit={onSubmit}>{submitText}</button>
         </div>

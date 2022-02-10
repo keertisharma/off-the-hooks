@@ -6,7 +6,16 @@ import "./RegistrationTool.css"
 import { useRegistration } from "./useRegistration";
 
 export const RegistrationTool = () => {
-    const {voters} = useRegistration()
+    const {
+        voters,
+        sortOrder,
+        inAddMode,
+        setAddMode,
+        inEditMode,
+        setEditMode,
+        selectedVoterId,
+        registerVoter,
+    } = useRegistration()
 
     return (
         <div>
@@ -14,7 +23,11 @@ export const RegistrationTool = () => {
                 RegistrationTool
             </div>
             <VoterList voters={voters} />
-            {/*<AddVoterForm submitText="Submit" onSubmit={() => { }}></AddVoterForm>*/}
+            <button type="button" onClick={setAddMode}>Add Voter</button>
+
+            {inAddMode &&
+                <AddVoterForm submitText="Submit" onSubmit={registerVoter}></AddVoterForm>
+            }
             {/*<EditVoterForm voter={voters[0]} submitText="Submit" onSubmit={() => { }}></EditVoterForm>*/}
         </div>
 

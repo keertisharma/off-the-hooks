@@ -3,14 +3,20 @@ import {
     DELETE_MULTIPLE_VOTERS,
     DELETE_VOTER,
     REGISTER_VOTER,
+    SET_SELECTED_VOTER_ID,
     SET_SORT_ORDER,
     SET_VOTERS,
-    UPDATE_VOTER
+    UPDATE_VOTER,
+    SET_MODE,
+    RESET_MODE,
 } from "./actions";
 
+const DEFAULT_MODE = 'default'
 const initialState = {
     voters: [],
     sortOrder: { field: null, direction: 1 },
+    mode: DEFAULT_MODE,
+    selectedVoterId: null,
 }
 
 export const voterReducer = (state = initialState, action) => {
@@ -27,8 +33,6 @@ export const voterReducer = (state = initialState, action) => {
                 ]
             }
         case SET_VOTERS:
-            console.log(action.payload);
-
             return {
                 ...state,
                 voters: action.payload.votersData,
@@ -65,6 +69,21 @@ export const voterReducer = (state = initialState, action) => {
             return {
                 ...state,
                 sortOrder: action.payload.sortOrder
+            }
+        case SET_MODE:
+            return {
+                ...state,
+                mode: action.payload.mode
+            }
+        case RESET_MODE:
+            return {
+                ...state,
+                mode: DEFAULT_MODE
+            }
+        case SET_SELECTED_VOTER_ID:
+            return {
+                ...state,
+                selectedVoterId: action.payload.selectedVoterId
             }
         default:
             return state
