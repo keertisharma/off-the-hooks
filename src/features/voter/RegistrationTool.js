@@ -1,6 +1,5 @@
 import { VoterList } from "./VoterList";
 import { AddVoterForm } from "./AddVoterForm";
-import { EditVoterForm } from "./EditVoterForm";
 
 import "./RegistrationTool.css"
 import { useRegistration } from "./useRegistration";
@@ -56,7 +55,8 @@ export const RegistrationTool = () => {
                 onCancel={resetMode}
                 selectedVoterId={selectedVoterId}
                 onDelete={onDelete}
-                updateVoter={updateVoter} />
+                updateVoter={updateVoter}
+                votersSort={sortOrder} />
         </div>
 
     );

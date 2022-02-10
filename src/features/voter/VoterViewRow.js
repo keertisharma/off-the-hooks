@@ -5,8 +5,8 @@ import { memo } from 'react';
 
 export const VoterViewRow = memo(({
                                     voter,
-                                    onEditVoter: editVoter,
-                                    onDeleteVoter: deleteVoter,
+                                    setEditMode,
+                                    onDelete,
                                 }) => {
 
     return (
@@ -21,10 +21,10 @@ export const VoterViewRow = memo(({
             <td>{voter.phone}</td>
             <td>
                 <button type="button"
-                        onClick={() => editVoter(voter.id)}>
+                        onClick={() => setEditMode(voter.id)}>
                     Edit</button>
                 <button type="button"
-                        onClick={() => deleteVoter(voter.id)}>
+                        onClick={() => onDelete(voter.id)}>
                     Delete</button>
             </td>
         </tr>

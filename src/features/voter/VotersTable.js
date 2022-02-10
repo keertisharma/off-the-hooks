@@ -24,6 +24,10 @@ export const VoterTable = ({
                              onDeleteVoter: deleteVoter,
                              onSaveVoter: saveVoter,
                              onCancelVoter: cancelVoter,
+                             onCancel,
+                             updateVoter,
+                             setEditMode,
+                             onDelete,
                          }) => {
 
     return (
@@ -39,10 +43,15 @@ export const VoterTable = ({
                 <tbody>
                 {voters.map(voter =>
                     voter.id === editVoterId
-                        ? <EditVoterForm key={voter.id} voter={voter}
-                                      onSaveVoter="" onCancelVoter="" />
-                        : <VoterViewRow key={voter.id} voter={voter}
-                                      onEditCar={editVoter} onDeleteVoter={deleteVoter} />)}
+                        ? <EditVoterForm key={voter.id}
+                        voter={voter}
+                        onCancel={onCancel}
+                        onSubmit={updateVoter} />
+                        : <VoterViewRow 
+                            key={voter.id}
+                            voter={voter}
+                            setEditMode={setEditMode}
+                            onDelete={onDelete} />)}
                 </tbody>
             </table>
         </form>
