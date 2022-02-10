@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { VotingTool } from "./features/ballot/VotingTool";
 import { RegistrationTool } from "./features/voter/RegistrationTool";

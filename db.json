@@ -1,0 +1,21 @@
+{
+    "voters": [
+        {
+            "id": 1,
+            "first_name": "Joe",
+            "last_name": "G.I."
+        }
+    ],
+    "elections": [
+        {
+            "id": 1,
+            "title": "Bridge of Doom",
+            "questions": [
+                "What is your name?",
+                "What is your favorite color?",
+                "What is your quest?",
+                "What is the airspeed velocity of an unladen swallow?",
+            ]
+        }
+    ]
+}

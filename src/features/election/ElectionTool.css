@@ -1,0 +1,26 @@
+.view-election-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.view-election-row .row-key {
+    font-weight: 800;
+}
+
+.add-election-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.add-election-form-row label {
+    font-weight: 800;
+}
+
+.edit-election-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.edit-election-form-row label {
+    font-weight: 800;
+}

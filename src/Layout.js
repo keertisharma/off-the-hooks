@@ -15,7 +15,7 @@ export const Layout = () => {
             <nav id="main-menu">
                 <ul>
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/voting-tool">Voter Tool</Link></li>
+                    <li><Link to="/voting-tool">Voting Tool</Link></li>
                     <li><Link to="/registration-tool">Registration Tool</Link></li>
                     <li><Link to="/election-tool">Election Tool</Link></li>
                 </ul>

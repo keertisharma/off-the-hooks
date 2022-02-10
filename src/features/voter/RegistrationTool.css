@@ -1,0 +1,26 @@
+.view-user-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.view-user-row .row-key {
+    font-weight: 800;
+}
+
+.add-user-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.add-user-form-row label{
+    font-weight: 800;
+}
+
+.edit-user-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.edit-user-form-row label{
+    font-weight: 800;
+}
