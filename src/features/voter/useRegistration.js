@@ -7,6 +7,7 @@ import {
     createSetModeAction,
     createResetModeAction,
     createSetSelectedVoterIdAction,
+    createSetSortOrderAction,
 } from './store/actions'
 import { nanoid } from "nanoid";
 
@@ -15,6 +16,8 @@ export const useRegistration = () => {
 
     const voters = useSelector(selectVoters);
     const sortOrder = useSelector(selectSortOrder)
+    console.log("userRegistration",sortOrder);
+
     const mode = useSelector(selectMode);
     const selectedVoterId = useSelector(selectSelectedVoterId);
 
@@ -60,9 +63,18 @@ export const useRegistration = () => {
         dispatch(createResetModeAction())
     }
 
+    const setSortOrder = (column) => {
+        let direction = 1;
+        if (sortOrder.column === column) {
+            direction = -sortOrder.direction;
+        }
+        dispatch(createSetSortOrderAction({column, direction}));
+    }
+
     return {
         voters,
         sortOrder,
+        setSortOrder,
         inEditMode: mode === 'edit',
         inAddMode: mode === 'add',
         setAddMode,

@@ -1,26 +1,25 @@
 //import PropTypes from 'prop-types';
 
-const showSortDir = (sortInfo) => {
-    if (sortInfo.column) {
-        return "(" + sortInfo.direction + ")";
+const showSortDir = (sortInfo, col) => {
+    if (sortInfo.column === col.field) {
+        return "(" + (sortInfo.direction === 1? "asc": "desc") + ")";
     }
 };
 
 export const SortColHeader = ({
                                   col,
-                                  sortInfo,
-                                  editMode,
-                                  onSort: sort }) => {
+                                  sortOrder,
+                                  setSortOrder,
+                                  editMode}) => {
 
-    const colLabel = (editMode && col.editControlId)
-        ? <label htmlFor={col.editControlId}>{col.label}</label>
-        : col.label;
+    console.log({col, sortOrder, editMode});
+
 
     return (
         <th>
-            <button type="button" onClick={() => sort(col.field)}>
-                {colLabel} 
-                {/* {showSortDir(sortInfo)} */}
+            <button type="button" onClick={() => setSortOrder(col.field)}>
+                {col.label}
+                {showSortDir(sortOrder, col)}
             </button>
         </th>
     );

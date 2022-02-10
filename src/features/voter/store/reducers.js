@@ -68,7 +68,7 @@ export const voterReducer = (state = initialState, action) => {
         case SET_SORT_ORDER:
             return {
                 ...state,
-                sortOrder: action.payload.sortOrder
+                sortOrder: action.payload.order
             }
         case SET_MODE:
             return {

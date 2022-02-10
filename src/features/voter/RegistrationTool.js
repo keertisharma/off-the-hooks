@@ -8,6 +8,7 @@ export const RegistrationTool = () => {
     const {
         voters,
         sortOrder,
+        setSortOrder,
         inAddMode,
         setAddMode,
         inEditMode,
@@ -19,6 +20,8 @@ export const RegistrationTool = () => {
         onDeleteMultiple,
         updateVoter,
     } = useRegistration()
+
+    console.log("RegistrationTool", sortOrder);
 
     return (
         <div>
@@ -57,7 +60,8 @@ export const RegistrationTool = () => {
                 selectedVoterId={selectedVoterId}
                 onDelete={onDelete}
                 updateVoter={updateVoter}
-                votersSort={sortOrder} />
+                sortOrder={sortOrder}
+                setSortOrder={ setSortOrder}/>
 
             <button
                 type="button"

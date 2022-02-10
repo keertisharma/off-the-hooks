@@ -29,7 +29,8 @@ export const VoterTable = ({
                              setEditMode,
                              onDelete,
                              inEditMode,
-                             selectedVoterId
+                             selectedVoterId,
+                               sortOrder, setSortOrder,
                          }) => {
 
     return (
@@ -38,7 +39,7 @@ export const VoterTable = ({
                 <thead>
                 <tr>
                     {cols.map( (col, i) => <SortColHeader key={i}
-                                                          col={col} sortInfo={votersSort} onSort={sortVoters} />)}
+                                                          col={col} sortOrder={sortOrder} setSortOrder={setSortOrder} onSort={sortVoters} />)}
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -53,7 +54,7 @@ export const VoterTable = ({
                             key={voter.id}
                             voter={voter}
                             setEditMode={setEditMode}
-                            onDelete={onDelete} />)}
+                            onDelete={onDelete}/>)}
                 </tbody>
             </table>
         </form>

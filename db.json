@@ -1,14 +1,24 @@
 {
   "voters": [
     {
-      "first_name": "hjghj",
-      "last_name": "ghjg",
-      "address": "hjg",
-      "city": "hjg",
-      "birth_date": "hjg",
-      "email": "hjg",
-      "phone": "hjhj",
-      "id": "b616oEaxDAbrMYaFqzkLK"
+      "first_name": "Joe",
+      "last_name": "G.I.",
+      "address": "2121 Still Lane",
+      "city": "Sad Miego",
+      "birth_date": "1/1/2000",
+      "email": "nobody@nuttin.com",
+      "phone": "555-333-1212",
+      "id": 1
+    },
+    {
+      "first_name": "jdkjd",
+      "last_name": "dkhkds",
+      "address": "kdsfds",
+      "city": "fhdkdf",
+      "birth_date": "fjhf",
+      "email": "djkdjf",
+      "phone": "jkjfhkds",
+      "id": "RGdWNkLkIDyWbyndUq2NQ"
     }
   ],
   "elections": [
