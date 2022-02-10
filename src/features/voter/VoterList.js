@@ -7,6 +7,8 @@ export const VoterList = ({
     inEditMode,
     onCancel,
     selectedVoterId,
+    onDelete,
+    updateVoter,
 }) => {
     console.log({ voters })
 
@@ -19,11 +21,13 @@ export const VoterList = ({
                         key={voter.id}
                         voter={voter}
                         onCancel={onCancel}
+                        onSubmit={updateVoter}
                     /> :
                     <Voter
                         key={voter.id}
                         voter={voter}
                         setEditMode={setEditMode}
+                        onDelete={onDelete}
                     ></Voter>
             )}
         </div>

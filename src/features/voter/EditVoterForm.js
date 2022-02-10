@@ -6,7 +6,10 @@ export const EditVoterForm = ({ voter, onSubmit, onCancel }) => {
     const { form, change, resetForm } = useForm(voterFormData)
 
     const submit = () => { 
-        onSubmit({ ...form })
+        onSubmit(
+            { ...form,
+                id: id }
+            )
         resetForm()
      }
 

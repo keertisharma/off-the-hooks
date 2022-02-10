@@ -1,16 +1,9 @@
 import { useDispatch, useSelector } from "react-redux"
-import { useEffect, useMemo } from "react";
-import { bindActionCreators } from 'redux';
+import { useEffect } from "react";
 import { selectMode, selectSortOrder, selectVoters, selectSelectedVoterId } from "./store/selectors"
-import { appendVoter, fetchVoters } from "./store/thunks";
+import { appendVoter, deleteVoter, fetchVoters , replaceVoter } from "./store/thunks";
 
 import {
-    createRegisterVoterAction,
-    createSetVotersAction,
-    createUpdateVoterAction,
-    createDeleteVoterAction,
-    createDeleteMultipleVotersAction,
-    createSetSortOrderAction,
     createSetModeAction,
     createResetModeAction,
     createSetSelectedVoterIdAction,
@@ -20,29 +13,21 @@ import { nanoid } from "nanoid";
 export const useRegistration = () => {
     const dispatch = useDispatch();
 
-    const actions = useMemo(() => bindActionCreators({
-        // these will be implied by API behaviors
-        // createRegisterVoterAction,
-        // createSetVotersAction,
-        // createUpdateVoterAction,
-        // createDeleteVoterAction,
-        // createDeleteMultipleVotersAction,
-        // createResetModeAction,
-    }, dispatch), [dispatch])
-
     const voters = useSelector(selectVoters);
     const sortOrder = useSelector(selectSortOrder)
     const mode = useSelector(selectMode);
     const selectedVoterId = useSelector(selectSelectedVoterId);
 
-    useEffect(() => { dispatch(fetchVoters()) }, [dispatch]);
+    useEffect(() => {
+        dispatch(fetchVoters())
+    }, [dispatch]);
 
     const registerVoter = (voterData) => {
         const voter = ({
             ...voterData,
             id: nanoid()
         })
-        console.log({voterData, voter})
+
         dispatch(appendVoter(voter))
         dispatch(createResetModeAction())
     }
@@ -57,11 +42,22 @@ export const useRegistration = () => {
     const resetMode = () => {
         dispatch(createResetModeAction())
     }
+    const onDelete = (id) => {
+        dispatch(deleteVoter(id))
+    }
+    
+        const updateVoter = (voterData,id) => {
+        const voter = ({
+            ...voterData,
+            id: id
+        })
+        console.log({voterData, voter})
+        dispatch(replaceVoter(voterData))
+        //dispatch(createResetModeAction())
+    }
 
-    console.log({ mode });
 
     return {
-        ...actions,
         voters,
         sortOrder,
         inEditMode: mode === 'edit',
@@ -71,5 +67,7 @@ export const useRegistration = () => {
         resetMode,
         selectedVoterId,
         registerVoter,
+        onDelete,
+        updateVoter
     }
 }
