@@ -24,13 +24,13 @@ export const appendVoter = (voter) => async(dispatch, getState) => {
     await append(voter);
 }
 
-export const updateVoter = (voter) => async(dispatch, getState) => {
+export const replaceVoter = (voter) => async(dispatch, getState) => {
     console.log("update VOTER", voter)
     // use API to add voter
     // dispatch fetch to get the new list 
     await replace(voter);
+    dispatch(fetchVoters());
 }
-
 
 export const deleteVoter = (voter) => async(dispatch, getState) => {
     console.log("delete VOTER", voter)
