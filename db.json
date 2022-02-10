@@ -1,26 +1,36 @@
 {
-    "voters": [
-        {
-            "id": 1,
-            "first_name": "Joe",
-            "last_name": "G.I.",
-            "address": "2121 Still Ave",
-            "city": "Sad Miego",
-            "birth_date": "1/1/2000",
-            "email": "nobody@nuttin.com",
-            "phone": "555-333-1212"
-        }
-    ],
-    "elections": [
-        {
-            "id": 1,
-            "title": "Bridge of Doom",
-            "questions": [
-                "What is your name?",
-                "What is your favorite color?",
-                "What is your quest?",
-                "What is the airspeed velocity of an unladen swallow?"
-            ]
-        }
-    ]
+  "voters": [
+    {
+      "id": 1,
+      "first_name": "Joe",
+      "last_name": "G.I.",
+      "address": "2121 Still Ave",
+      "city": "Sad Miego",
+      "birth_date": "1/1/2000",
+      "email": "nobody@nuttin.com",
+      "phone": "555-333-1212"
+    },
+    {
+      "first_name": "jhj",
+      "last_name": "ghj",
+      "address": "gjh",
+      "city": "gjh",
+      "birth_date": "ghj",
+      "email": "ghj",
+      "phone": "gj",
+      "id": "wn5mlKR7YfG3eDStiTggf"
+    }
+  ],
+  "elections": [
+    {
+      "id": 1,
+      "title": "Bridge of Doom",
+      "questions": [
+        "What is your name?",
+        "What is your favorite color?",
+        "What is your quest?",
+        "What is the airspeed velocity of an unladen swallow?"
+      ]
+    }
+  ]
 }

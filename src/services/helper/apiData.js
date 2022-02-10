@@ -1,4 +1,4 @@
-export const apiUrl = "http://localhost:3060";
+export const apiUrl = "http://localhost:5050";
 
 export const HTTP_METHOD_GET = 'GET';
 export const HTTP_METHOD_POST = 'POST';
