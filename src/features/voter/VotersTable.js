@@ -4,7 +4,6 @@
 import { SortColHeader } from './SortColHeader';
 import { VoterViewRow } from './VoterViewRow';
 import { VoterEditRow } from "./VoterEditRow";
-import { EditVoterForm } from "./EditVoterForm";
 import { useState } from 'react';
 
 
@@ -20,18 +19,18 @@ const cols = [
 ];
 
 export const VoterTable = ({
-                             voters, editVoterId, votersSort,
-                             onSortVoters: sortVoters,
-                             onEditVoter: editVoter,
-                             onDeleteVoter: deleteVoter,
-                             onSaveVoter: saveVoter,
-                             onCancelVoter: cancelVoter,
-                             onCancel,
-                             updateVoter,
-                             setEditMode,
-                             onDelete,
+    voters, editVoterId, votersSort,
+    onSortVoters: sortVoters,
+    onEditVoter: editVoter,
+    onDeleteVoter: deleteVoter,
+    onSaveVoter: saveVoter,
+    onCancelVoter: cancelVoter,
+    onCancel,
+    updateVoter,
+    setEditMode,
+    onDelete,
     inEditMode,
-                             selectedVoterId
+    selectedVoterId,
     onDeleteMultiple,
 }) => {
 
@@ -69,26 +68,26 @@ export const VoterTable = ({
             >Delete Selected</button>
             <table>
                 <thead>
-                <tr>
+                    <tr>
                         {!inEditMode &&
                             <th>Select</th>
                         }
                         {cols.map((col, i) => <SortColHeader key={i}
-                                                          col={col} sortInfo={votersSort} onSort={sortVoters} />)}
-                    <th>Actions</th>
-                </tr>
+                            col={col} sortInfo={votersSort} onSort={sortVoters} />)}
+                        <th>Actions</th>
+                    </tr>
                 </thead>
                 <tbody>
-                {voters.map((voter, i) =>
-                    inEditMode && selectedVoterId === voter.id 
-                        ? <VoterEditRow key={voter.id}
-                        voter={voter}
-                        onCancel={onCancel}
-                        onSubmit={updateVoter} />
-                        : <VoterViewRow 
-                            key={voter.id}
-                            voter={voter}
-                            setEditMode={setEditMode}
+                    {voters.map((voter, i) =>
+                        inEditMode && selectedVoterId === voter.id
+                            ? <VoterEditRow key={voter.id}
+                                voter={voter}
+                                onCancel={onCancel}
+                                onSubmit={updateVoter} />
+                            : <VoterViewRow
+                                key={voter.id}
+                                voter={voter}
+                                setEditMode={setEditMode}
                                 onDelete={onDelete}
                                 selector={selector(voter, i)}
                             />)}

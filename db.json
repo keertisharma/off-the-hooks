@@ -1,14 +1,24 @@
 {
   "voters": [
     {
-      "first_name": "hjghj",
-      "last_name": "ghjg",
-      "address": "hjg",
-      "city": "hjg",
-      "birth_date": "hjg",
-      "email": "hjg",
-      "phone": "hjhj",
-      "id": "b616oEaxDAbrMYaFqzkLK"
+      "first_name": "a",
+      "last_name": "b",
+      "address": "c",
+      "city": "d",
+      "birth_date": "e",
+      "email": "f",
+      "phone": "g",
+      "id": "l98moUe-m3POMC3SeAsUY"
+    },
+    {
+      "first_name": "d",
+      "last_name": "e",
+      "address": "f",
+      "city": "g",
+      "birth_date": "h",
+      "email": "i",
+      "phone": "j",
+      "id": "1IJA4ejZYJX0aczuu-lvR"
     }
   ],
   "elections": [
