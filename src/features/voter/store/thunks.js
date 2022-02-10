@@ -13,7 +13,6 @@ export const fetchVoters = () => async (dispatch, getState) => {
     const result = await fetch(base_url);
     const voters = await result.json();
 
-    console.log(voters);
     dispatch(createSetVotersAction(voters));
 }
 
@@ -43,6 +42,10 @@ export const deleteVoter = (voter) => async(dispatch, getState) => {
 export const deleteMultipleVoter = (ids) => async(dispatch, getState) => {
     console.log("delete multiple VOTER ids", ids)
     ids.map(id => remove(id));
+}
+
+
+export const deleteVoters = (voterIds) => async(dispatch, getState) => {
 }
 
 

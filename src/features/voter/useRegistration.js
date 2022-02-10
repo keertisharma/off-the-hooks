@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react";
 import { selectMode, selectSortOrder, selectVoters, selectSelectedVoterId } from "./store/selectors"
-import { appendVoter, deleteVoter, fetchVoters , replaceVoter, deleteMultipleVoter } from "./store/thunks";
+import { appendVoter, deleteVoter, fetchVoters, replaceVoter, deleteVoters, deleteMultipleVoter } from "./store/thunks";
 
 import {
     createSetModeAction,
@@ -45,8 +45,11 @@ export const useRegistration = () => {
     const onDelete = (id) => {
         dispatch(deleteVoter(id))
     }
-    
-    const updateVoter = (voterData,id) => {
+    const onDeleteMany = ([ids]) => {
+        dispatch(deleteVoters([ids]))
+    }
+
+    const updateVoter = (voterData, id) => {
         const voter = ({
             ...voterData,
             id: id
@@ -70,11 +73,12 @@ export const useRegistration = () => {
         inAddMode: mode === 'add',
         setAddMode,
         setEditMode,
-        resetMode,
+        resetMode, 
         selectedVoterId,
         registerVoter,
         onDelete,
-        updateVoter,
+        onDeleteMany,
         onDeleteMultiple,
+        updateVoter
     }
 }

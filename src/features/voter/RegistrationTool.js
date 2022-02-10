@@ -17,6 +17,7 @@ export const RegistrationTool = () => {
         selectedVoterId,
         registerVoter,
         onDelete,
+        onDeleteMany,
         updateVoter,
         onDeleteMultiple,
     } = useRegistration()
@@ -33,6 +34,7 @@ export const RegistrationTool = () => {
                 onCancel={resetMode}
                 selectedVoterId={selectedVoterId}
                 onDelete={onDelete}
+                onDeleteMany={onDeleteMany}
                 updateVoter={updateVoter}
             />
             <button

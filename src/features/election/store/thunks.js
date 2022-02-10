@@ -1,1 +1,1 @@
-export const fetchElections = () => {}
+export const fetchElections = () => () => { }
