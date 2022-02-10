@@ -13,15 +13,15 @@ const initialForm = {
 export const AddVoterForm = ({ onSubmit, onCancel }) => {
     const { form, change, resetForm } = useForm(initialForm)
 
-    const submit = () => { 
+    const submit = () => {
         onSubmit({ ...form })
         resetForm()
-     }
+    }
 
-     const cancel = () => {
-         onCancel()
-         resetForm()
-     }
+    const cancel = () => {
+        onCancel()
+        resetForm()
+    }
 
     const { first_name, last_name, address, city, birth_date, email, phone } = form
 

@@ -1,16 +1,9 @@
 import { useDispatch, useSelector } from "react-redux"
-import { useEffect, useMemo } from "react";
-import { bindActionCreators } from 'redux';
+import { useEffect } from "react";
 import { selectMode, selectSortOrder, selectVoters, selectSelectedVoterId } from "./store/selectors"
 import { appendVoter, fetchVoters } from "./store/thunks";
 
 import {
-    createRegisterVoterAction,
-    createSetVotersAction,
-    createUpdateVoterAction,
-    createDeleteVoterAction,
-    createDeleteMultipleVotersAction,
-    createSetSortOrderAction,
     createSetModeAction,
     createResetModeAction,
     createSetSelectedVoterIdAction,
@@ -19,16 +12,6 @@ import { nanoid } from "nanoid";
 
 export const useRegistration = () => {
     const dispatch = useDispatch();
-
-    const actions = useMemo(() => bindActionCreators({
-        // these will be implied by API behaviors
-        // createRegisterVoterAction,
-        // createSetVotersAction,
-        // createUpdateVoterAction,
-        // createDeleteVoterAction,
-        // createDeleteMultipleVotersAction,
-        // createResetModeAction,
-    }, dispatch), [dispatch])
 
     const voters = useSelector(selectVoters);
     const sortOrder = useSelector(selectSortOrder)
@@ -42,7 +25,7 @@ export const useRegistration = () => {
             ...voterData,
             id: nanoid()
         })
-        console.log({voterData, voter})
+
         dispatch(appendVoter(voter))
         dispatch(createResetModeAction())
     }
@@ -58,10 +41,7 @@ export const useRegistration = () => {
         dispatch(createResetModeAction())
     }
 
-    console.log({ mode });
-
     return {
-        ...actions,
         voters,
         sortOrder,
         inEditMode: mode === 'edit',
