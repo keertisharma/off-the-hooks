@@ -9,7 +9,7 @@ export const ElectionTool = () => {
     const { elections } = useElections();
 
     return (
-        <div>
+        <div className="election-tool">
             ElectionTool
             <ElectionList elections={elections}></ElectionList>
             <AddElectionForm submitText="Submit" onSubmit={() => { }} />
