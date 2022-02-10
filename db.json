@@ -1,26 +1,5 @@
 {
-  "voters": [
-    {
-      "first_name": "Ashwin",
-      "last_name": "ghjg",
-      "address": "hjg",
-      "city": "jhg",
-      "birth_date": "hjg",
-      "email": "hjghj",
-      "phone": "gh",
-      "id": "HQQhEV5eVeY-3dvuArcdi"
-    },
-    {
-      "first_name": "jgjh",
-      "last_name": "ghj",
-      "address": "gjh",
-      "city": "gjh",
-      "birth_date": "ghj",
-      "email": "ghjg",
-      "phone": "jh",
-      "id": "snm-B6peCIzGHQyc7PB7G"
-    }
-  ],
+  "voters": [],
   "elections": [
     {
       "id": 1,

@@ -40,4 +40,9 @@ export const deleteVoter = (voter) => async(dispatch, getState) => {
     await remove(voter);
 }
 
+export const deleteMultipleVoter = (ids) => async(dispatch, getState) => {
+    console.log("delete multiple VOTER ids", ids)
+    ids.map(id => remove(id));
+}
+
 

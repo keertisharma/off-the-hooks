@@ -18,6 +18,7 @@ export const RegistrationTool = () => {
         registerVoter,
         onDelete,
         updateVoter,
+        onDeleteMultiple,
     } = useRegistration()
 
     return (
@@ -57,6 +58,13 @@ export const RegistrationTool = () => {
                 onDelete={onDelete}
                 updateVoter={updateVoter}
                 votersSort={sortOrder} />
+
+            <button
+                type="button"
+                onClick={onDeleteMultiple}
+            >
+                Delete Voter Testing
+            </button>
         </div>
 
     );
