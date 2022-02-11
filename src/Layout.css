@@ -92,11 +92,12 @@ body {
 
 #main-menu {
     grid-area: menu;
-    background-color: darkgray;
+    background-color:#B22222;
     padding: 0 20px;
     display: flex;
     align-items: center;
-    width: 70%;
+    width: 100%;
+    z-index: -100;
 }
 
 #main-menu > ul {
@@ -112,7 +113,8 @@ body {
 #main-menu li > a, 
 #main-menu li > a:visited, 
 #main-menu li > a:active {
-    color: black;
+    color: white;
+    font-weight: 700;
     text-decoration: none;
 }
 
@@ -173,6 +175,8 @@ h2.center {
 
 .row.header-color {
     background-color: goldenrod;
+    height: 5em;
+    
 }
 
 h3.slogan {
