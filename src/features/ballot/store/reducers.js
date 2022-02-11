@@ -3,11 +3,18 @@ import {
     CREATE_BALLOT,
     SET_BALLOTS,
     SET_SELECTED_ELECTION_ID,
+    SET_MODE,
+    RESET_MODE,
+    SET_SELECTED_VOTER_ID,
 } from './actions';
+
+const DEFAULT_MODE = 'default'
 
 const initialState = {
     ballots: [],
     selectedElectionId: null,
+    selectedVoterId: null,
+    mode: DEFAULT_MODE,
 }
 
 export const ballotReducer = (state = initialState, action) => {
@@ -33,6 +40,21 @@ export const ballotReducer = (state = initialState, action) => {
             return {
                 ...state,
                 selectedElectionId: action.payload.electionId
+            }
+        case SET_SELECTED_VOTER_ID:
+            return {
+                ...state,
+                selectedVoterId: action.payload.voterId
+            }  
+        case SET_MODE:
+            return {
+                ...state,
+                mode: action.payload.mode
+            }
+        case RESET_MODE:
+            return {
+                ...state,
+                mode: DEFAULT_MODE
             }
         default:
             return state;

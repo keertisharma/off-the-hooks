@@ -8,5 +8,8 @@ export const selectBallotsByElection = (electionId) => (state) => {
     );
 }
 
-// export const selectElectionViewMode = (state) => state.electionTool.mode;
+export const selectMode = (state) => state.ballotTool.mode;
+
 export const selectSelectedElectionId = (state) => state.ballotTool.selectedElectionId;
+
+export const selectSelectedVoterId = (state) => state.ballotTool.selectedVoterId;

@@ -1,16 +1,15 @@
 import { useForm } from '../../hooks/useForm'
 
-export const BallotForm = ({ voter, election }) => {
+export const BallotForm = ({ voter, election, castVote }) => {
     const initialValues = { responses: election.questions.map(q => false) }
     const { form, setForm } = useForm(initialValues)
 
-    const Row = ({ i, question, response }) => {
-        const id = `ballot-form-row-${i}`
+    const Row = ({question, response }) => {
 
         return (
             <div className='ballot-form-row'>
-                <input type="checkbox" checked={response} onChange={setForm} id={id}></input>
-                <label forHtml={id}>
+                <label>
+                    <input type="checkbox" checked={response} onChange={setForm}></input>
                     <div>{question}</div>
                 </label>
             </div>
@@ -19,8 +18,11 @@ export const BallotForm = ({ voter, election }) => {
 
     return (
         <div>
-            BALLOT FORM
-            {election.questions.map((q, i) => <Row i={i} question={q} response={form[i]} />)}
+            <p>BALLOT FORM</p>
+            <p>Voter's Email : {voter.email}</p>
+            <p>Election Title : {election.title}</p>
+            {election.questions.map((q, i) => <Row key={i} question={q} response={form[i]} />)}
+            <button type="button" onClick={() => castVote} >Cast Vote</button>
         </div>
     )
 }

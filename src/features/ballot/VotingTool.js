@@ -1,14 +1,22 @@
-import { BallotForm } from "./BallotForm";
-
 import "./VotingTool.css"
 import { useBallot } from "./useBallot";
 import { ElectionTable } from "./ElectionTable";
+import { VoterLogin } from './VoterLogin';
+import { BallotForm } from './BallotForm';
 
 export const VotingTool = () => {
     const {
         elections,
         selectedElectionId,
         setSelectedElectionId,
+        selectedElection,
+        selectedVoter,
+        inDefaultMode,
+        inLoginMode,
+        inErrorMode,
+        inVotingMode,
+        onLoginSubmit,
+        onCancel
     } = useBallot();
 
     
@@ -16,10 +24,19 @@ export const VotingTool = () => {
     return (
         <div>
             VotingTool
-            {/*<BallotForm voter={sample_voter} election={sample_election} />*/}
+            { inVotingMode &&
+               <BallotForm voter={selectedVoter} election={selectedElection} />
+            }
+
+            { (inDefaultMode || inLoginMode) &&
             <ElectionTable elections={elections}
                 setSelectedElectionId={setSelectedElectionId}
                 selectedElectionId={selectedElectionId} />
+            }
+            {
+                inLoginMode && <VoterLogin onSubmit={onLoginSubmit} onCancel={onCancel} />
+            }    
+
         </div>
     );
 }
