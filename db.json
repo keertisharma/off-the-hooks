@@ -1,7 +1,6 @@
 {
   "voters": [
     {
-<<<<<<< HEAD
       "first_name": "Joe",
       "last_name": "G.I.",
       "address": "2121 Still Lane",
@@ -12,15 +11,6 @@
       "id": 1
     },
     {
-      "first_name": "jdkjd",
-      "last_name": "dkhkds",
-      "address": "kdsfds",
-      "city": "fhdkdf",
-      "birth_date": "fjhf",
-      "email": "djkdjf",
-      "phone": "jkjfhkds",
-      "id": "RGdWNkLkIDyWbyndUq2NQ"
-=======
       "first_name": "a",
       "last_name": "b",
       "address": "c",
@@ -39,7 +29,16 @@
       "email": "i",
       "phone": "j",
       "id": "1IJA4ejZYJX0aczuu-lvR"
->>>>>>> 6060a0ec6680ad3ae51c8dc771f24d5723aa44a9
+    },
+    {
+      "first_name": "Ashwin",
+      "last_name": "Devadiga",
+      "address": "10116 Douglas Oaks Circle Apt 203",
+      "city": "Tampa",
+      "birth_date": "",
+      "email": "devadiga.ashwin45@gmail.com",
+      "phone": "03132886716",
+      "id": "mzfXizqzbyY2aJIIHO_BL"
     }
   ],
   "elections": [
@@ -65,6 +64,16 @@
     },
     {
       "id": "sRyf8f6rq2fbcEQc1LJUj",
+      "title": "Bridge of Doom",
+      "questions": [
+        "What is your name?",
+        "What is your favorite color?",
+        "What is your quest?",
+        "What is the airspeed velocity of an unladen swallow?"
+      ]
+    },
+    {
+      "id": "IlcyMKVvccmvNpAdHMRSJ",
       "title": "Bridge of Doom",
       "questions": [
         "What is your name?",
