@@ -5,20 +5,10 @@
       "last_name": "Devadiga",
       "address": "10116 Douglas Oaks Circle Apt 203",
       "city": "Tampa",
-      "birth_date": "",
+      "birth_date": "1988",
       "email": "devadiga.ashwin45@gmail.com",
       "phone": "03132886716",
       "id": "mzfXizqzbyY2aJIIHO_BL"
-    },
-    {
-      "first_name": "abe",
-      "last_name": "vegeta",
-      "address": "21",
-      "city": "eso",
-      "birth_date": "2019",
-      "email": "@",
-      "phone": "999",
-      "id": "gMlMDOFcCsgEXiaeVhVpw"
     },
     {
       "first_name": "Keerti",
@@ -74,7 +64,7 @@
     },
     {
       "id": "sRyf8f6rq2fbcEQc1LJUj",
-      "title": "Bridge of Doom",
+      "title": "Bridge of Doom 1",
       "questions": [
         "What is your name?",
         "What is your favorite color?",
@@ -84,12 +74,12 @@
     },
     {
       "id": "IlcyMKVvccmvNpAdHMRSJ",
-      "title": "Bridge of Doom",
+      "title": "Bridge of Doom 2",
       "questions": [
-        "What is your name?",
-        "What is your favorite color?",
-        "What is your quest?",
-        "What is the airspeed velocity of an unladen swallow?"
+        "Is your name Captain Hook?",
+        "Is red your favorite color?",
+        "Is your quest treasure?",
+        "Did you lose your right arm?"
       ]
     },
     {
@@ -103,37 +93,41 @@
         "The words - Poor and poverty - appear 446 times in 384 separate verses in the Bible?",
         "Michael Jordan was cut from his high school basketball team?"
       ]
-    },
-    {
-      "title": "Bridge of Test 1",
-      "questions": [
-        "dd"
-      ],
-      "id": "oWiEAIit1iUdmINF31hs3"
     }
   ],
   "ballots": [
     {
-      "id": "dhks1",
-      "voterId": "RGdWNkLkIDyWbyndUq2NQ",
+      "voterId": "hjhfjds089e93",
       "electionId": "56YTcNhvmw_ZndnUdfr-0",
+      "responses": [
+        "Yes",
+        "Yes",
+        "No",
+        "Yes"
+      ],
+      "id": 1
+    },
+    {
+      "voterId": "hjhfjds089e93",
+      "electionId": "56YTcNhvmw_ZndnUdfr-0",
+      "responses": [
+        "Yes",
+        "No",
+        "No",
+        "No"
+      ],
+      "id": 1
+    },
+    {
+      "voterId": "hjhfjds089e93",
+      "electionId": "IlcyMKVvccmvNpAdHMRSJ",
       "responses": [
         "Yes",
         "No",
         "Yes",
         "Yes"
-      ]
-    },
-    {
-      "id": "jkjfks",
-      "voterId": "1",
-      "electionId": "56YTcNhvmw_ZndnUdfr-0",
-      "responses": [
-        "No",
-        "No",
-        "Yes",
-        "No"
-      ]
+      ],
+      "id": 2
     }
   ]
 }

@@ -7,7 +7,7 @@ export const ElectionTable = ({ elections, selectedElectionId, setSelectedElecti
             <table className="table">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        {/*<th>ID</th>*/}
                         <th>Title</th>
                         <th>Number Questions</th>
                         <th>Actions</th>
@@ -18,7 +18,7 @@ export const ElectionTable = ({ elections, selectedElectionId, setSelectedElecti
                         
                         return (
                             <tr key={election.id}>
-                                <td>{election.id}</td>
+                                {/*<td>{election.id}</td>*/}
                                 <td className= {election.id === selectedElectionId? "selected":""}>
                                     {election.title}</td>
                                 <td>{election.questions.length}</td>
