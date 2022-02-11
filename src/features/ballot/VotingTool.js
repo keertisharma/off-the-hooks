@@ -19,7 +19,6 @@ export const VotingTool = () => {
         inSuccessMode,
         inVotingMode,
         onLoginSubmit,
-        onCancel,
         castVote,
         error,
         resetMode,
@@ -47,7 +46,7 @@ export const VotingTool = () => {
             {inLoginMode &&
                 <VoterLogin
                     onSubmit={onLoginSubmit}
-                    onCancel={onCancel} />
+                    onCancel={resetMode} />
             }
             {inSuccessMode &&
                 <Success resetMode={resetMode} />
