@@ -2,50 +2,51 @@
 import { useForm } from '../../hooks/useForm';
 
 export const VoterEditRow = ({
-                               voter,
-                               onCancel,
-                               cancelVoter,
-                               updateVoter,
-                               onSubmit,
-                           }) => {
+    voter,
+    onCancel,
+    cancelVoter,
+    updateVoter,
+    onSubmit,
+}) => {
 
     const { id, ...voterFormData } = voter
 
     const { form, change, resetForm } = useForm(voterFormData)
 
-    const submit = () => { 
-        
-        onSubmit(
-            { ...form,
-                id: id }
-            )
-        resetForm()
-     }
+    const submit = () => {
+        const newData = {
+            ...form,
+            id: id
+        }
+        onSubmit(newData, id)
 
-     const cancel = () => {
-         resetForm()
-         onCancel()
-     }
+        resetForm()
+    }
+
+    const cancel = () => {
+        resetForm()
+        onCancel()
+    }
 
     const { first_name, last_name, address, city, birth_date, email, phone } = form
 
     return (
         <tr>
             <td>{id}</td>
-            <td><input type="text" name="first_name" 
-                       value={first_name} onChange={change} /></td>
+            <td><input type="text" name="first_name"
+                value={first_name} onChange={change} /></td>
             <td><input type="text" name="last_name"
-                       value={last_name} onChange={change} /></td>
+                value={last_name} onChange={change} /></td>
             <td><input type="text" name="address"
-                       value={address} onChange={change} /></td>
+                value={address} onChange={change} /></td>
             <td><input type="text" name="city"
-                       value={city} onChange={change} /></td>
+                value={city} onChange={change} /></td>
             <td><input type="text" name="birth_date"
-                       value={birth_date} onChange={change} /></td>
+                value={birth_date} onChange={change} /></td>
             <td><input type="text" name="email"
-                       value={email} onChange={change} /></td>
+                value={email} onChange={change} /></td>
             <td><input type="text" name="phone"
-                       value={phone} onChange={change} /></td>
+                value={phone} onChange={change} /></td>
             <td>
                 <button type="button" onClick={submit}>Save</button>
                 <button type="button" onClick={cancel}>Cancel</button>

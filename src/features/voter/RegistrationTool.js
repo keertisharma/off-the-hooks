@@ -58,7 +58,7 @@ export const RegistrationTool = () => {
                 <VoterTable voters={voters}
                     setEditMode={setEditMode}
                     inEditMode={inEditMode}
-                    onCancel={resetMode}
+                    onCancel={setListMode}
                     selectedVoterId={selectedVoterId}
                     onDelete={onDelete}
                     onDeleteMultiple={onDeleteMultiple}

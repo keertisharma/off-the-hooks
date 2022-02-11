@@ -18,8 +18,9 @@ import {
     };
   
     const replace = async resourceData => {
+      const url = elementUrl(resourceName, resourceData.id)
       const res = await fetch(
-        elementUrl(resourceName, resourceData.id),
+        url,
         fetchOptions(HTTP_METHOD_PUT, resourceData));
       return res.json();
     };

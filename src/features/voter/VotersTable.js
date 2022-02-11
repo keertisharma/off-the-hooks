@@ -70,11 +70,13 @@ export const VoterTable = ({
                     <thead className="thead-dark">
 
                         <tr>
-                            <th> <button
-                                type="button"
-                                disabled={selectedVoterIds.length === 0}
-                                onClick={deleteSelected}>D</button> </th>
-                            
+                            {!inEditMode &&
+                                <th> <button
+                                    type="button"
+                                    disabled={selectedVoterIds.length === 0}
+                                    onClick={deleteSelected}>Del</button> </th>
+
+                            }
                             {cols.map((col, i) => <SortColHeader key={i}
                                 col={col} sortOrder={sortOrder} setSortOrder={setSortOrder} onSort={sortVoters} />)}
                             <th>Actions</th>
@@ -90,6 +92,7 @@ export const VoterTable = ({
                                 : <VoterViewRow
                                     key={voter.id}
                                     voter={voter}
+                                    inEditMode={inEditMode}
                                     setEditMode={setEditMode}
                                     onDelete={onDelete}
                                     selector={selector(voter, i)} />)}
