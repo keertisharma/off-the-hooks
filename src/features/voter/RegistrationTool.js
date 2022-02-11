@@ -28,16 +28,6 @@ export const RegistrationTool = () => {
             <div>
                 RegistrationTool
             </div>
-            {/* <VoterList
-                voters={voters}
-                setEditMode={setEditMode}
-                inEditMode={inEditMode}
-                onCancel={resetMode}
-                selectedVoterId={selectedVoterId}
-                onDelete={onDelete}
-                onDeleteMultiple={onDeleteMultiple}
-                updateVoter={updateVoter}
-            /> */}
             <button
                 type="button"
                 onClick={setAddMode}
@@ -59,14 +49,14 @@ export const RegistrationTool = () => {
                 onCancel={resetMode}
                 selectedVoterId={selectedVoterId}
                 onDelete={onDelete}
+                onDeleteMultiple={onDeleteMultiple}
                 updateVoter={updateVoter}
                 sortOrder={sortOrder}
                 setSortOrder={ setSortOrder}/>
 
             <button
                 type="button"
-                onClick={onDeleteMultiple}
-            >
+                onClick={onDeleteMultiple}>
                 Delete Voter Testing
             </button>
         </div>

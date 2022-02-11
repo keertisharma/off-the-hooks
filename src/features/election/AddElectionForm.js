@@ -6,9 +6,22 @@ const initialForm = {
 }
 
 export const AddElectionForm = ({ submitText, onSubmit }) => {
-    const { form, change } = useForm(initialForm)
+    const { form, change, resetForm } = useForm(initialForm)
 
     const { title, questions } = form
+
+    const submit = () => {
+        onSubmit({
+            "id": 1,
+            "title": "Bridge of Doom",
+            "questions": [
+              "What is your name?",
+              "What is your favorite color?",
+              "What is your quest?",
+              "What is the airspeed velocity of an unladen swallow?"
+            ]
+          })
+    }
 
     const Row = ({ label, name, value }) => {
         const id = `add-election-form-row-${name}`
@@ -29,7 +42,7 @@ export const AddElectionForm = ({ submitText, onSubmit }) => {
                 <Row label={`Question ${i + 1}`} name={`question-${i + 1}`} value={question} />
             )}
 
-            <button type="button" onSubmit={onSubmit}>{submitText}</button>
+            <button type="button" onClick={submit}>{submitText}</button>
         </div>
     )
 }

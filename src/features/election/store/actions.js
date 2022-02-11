@@ -24,3 +24,8 @@ export const createSetSelectedElectionId = (electionId) => ({
     type: SET_SELECTED_ELECTION_ID,
     payload: { electionId }
 })
+
+export const createResetModeAction = () => ({
+    type: SET_VIEW_MODE,
+    payload: { mode:null }
+})
