@@ -1,6 +1,4 @@
-import { VoterList } from "./VoterList";
 import { AddVoterForm } from "./AddVoterForm";
-import { EditVoterForm } from "./EditVoterForm";
 
 import "./RegistrationTool.css"
 import { useRegistration } from "./useRegistration";
@@ -18,6 +16,7 @@ export const RegistrationTool = () => {
         selectedVoterId,
         registerVoter,
         onDelete,
+        onDeleteMultiple,
         updateVoter,
     } = useRegistration()
 
@@ -26,15 +25,6 @@ export const RegistrationTool = () => {
             <div>
                 RegistrationTool
             </div>
-            <VoterList
-                voters={voters}
-                setEditMode={setEditMode}
-                inEditMode={inEditMode}
-                onCancel={resetMode}
-                selectedVoterId={selectedVoterId}
-                onDelete={onDelete}
-                updateVoter={updateVoter}
-            />
             <button
                 type="button"
                 onClick={setAddMode}
@@ -56,7 +46,9 @@ export const RegistrationTool = () => {
                 onCancel={resetMode}
                 selectedVoterId={selectedVoterId}
                 onDelete={onDelete}
-                updateVoter={updateVoter} />
+                onDeleteMultiple={onDeleteMultiple}
+                updateVoter={updateVoter}
+                votersSort={sortOrder} />
         </div>
 
     );

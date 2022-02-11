@@ -1,30 +1,40 @@
 {
   "voters": [
     {
-      "first_name": "Joe",
-      "last_name": "G.I.",
-      "address": "2121 Still Test",
-      "city": "Sad Miego",
-      "birth_date": "1/1/2000",
-      "email": "nobody@nuttin.com",
-      "phone": "555-333-1212",
-      "id": 1
+      "first_name": "a",
+      "last_name": "b",
+      "address": "c",
+      "city": "d",
+      "birth_date": "e",
+      "email": "f",
+      "phone": "g",
+      "id": "l98moUe-m3POMC3SeAsUY"
     },
     {
-      "first_name": "h",
-      "last_name": "",
-      "address": "",
-      "city": "",
-      "birth_date": "",
-      "email": "",
-      "phone": "",
-      "id": "lio1Lhnf_xkJKsBolr_wQ"
+      "first_name": "d",
+      "last_name": "e",
+      "address": "f",
+      "city": "g",
+      "birth_date": "h",
+      "email": "i",
+      "phone": "j",
+      "id": "1IJA4ejZYJX0aczuu-lvR"
     }
   ],
   "elections": [
     {
       "id": 1,
-      "title": "Bridge of Doom",
+      "title": "Bridge of Test 1",
+      "questions": [
+        "What is your name?",
+        "What is your favorite color?",
+        "What is your quest?",
+        "What is the airspeed velocity of an unladen swallow?"
+      ]
+    },
+    {
+      "id": "56YTcNhvmw_ZndnUdfr-0",
+      "title": "Bridge of Test 2",
       "questions": [
         "What is your name?",
         "What is your favorite color?",

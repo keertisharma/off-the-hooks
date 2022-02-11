@@ -4,13 +4,18 @@ import { memo } from 'react';
 //import { voterPropType } from './voterToolPropTypes';
 
 export const VoterViewRow = memo(({
-                                    voter,
-                                    onEditVoter: editVoter,
-                                    onDeleteVoter: deleteVoter,
-                                }) => {
+    voter,
+    setEditMode,
+    onDelete,
+    selector,
+    inEditMode,
+}) => {
 
     return (
         <tr>
+            {!inEditMode &&
+                <td>{selector}</td>
+            }
             <td>{voter.id}</td>
             <td>{voter.first_name}</td>
             <td>{voter.last_name}</td>
@@ -21,10 +26,10 @@ export const VoterViewRow = memo(({
             <td>{voter.phone}</td>
             <td>
                 <button type="button"
-                        onClick={() => editVoter(voter.id)}>
+                    onClick={() => setEditMode(voter.id)}>
                     Edit</button>
                 <button type="button"
-                        onClick={() => deleteVoter(voter.id)}>
+                    onClick={() => onDelete(voter.id)}>
                     Delete</button>
             </td>
         </tr>

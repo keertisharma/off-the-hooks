@@ -6,13 +6,13 @@ import { useElections } from './useElections';
 
 export const ElectionTool = () => {
 
-    const { elections } = useElections();
-
+    const { elections, createElection } = useElections();
+    console.log(elections);
     return (
         <div className="election-tool">
             ElectionTool
             <ElectionList elections={elections}></ElectionList>
-            <AddElectionForm submitText="Submit" onSubmit={() => { }} />
+            <AddElectionForm submitText="Submit" onSubmit={createElection} />
         </div>
     );
 }
