@@ -23,7 +23,7 @@ export const RegistrationTool = () => {
         updateVoter,
     } = useRegistration()
 
-    console.log("RegistrationTool", sortOrder);
+    ;
 
     const toggleListDisplay = () => {
         if (inListMode) { resetMode() } else { setListMode() }

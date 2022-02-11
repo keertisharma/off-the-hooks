@@ -12,7 +12,7 @@ export const fetchBallots = () => async (dispatch, getState) => {
 }
 
 export const appendBallot = (ballot) => async (dispatch, getState) => {
-    console.log("ADDING BALLOT", ballot)
+    
     // use API to add voter
     // dispatch fetch to get the new list
     await append(ballot);

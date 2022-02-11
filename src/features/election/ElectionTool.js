@@ -8,7 +8,7 @@ import { useElections } from './useElections';
 export const ElectionTool = () => {
 
     const { elections, createElection, selectedElectionId, setSelectedElectionId, electionResults } = useElections();
-    console.log(elections);
+    ;
     return (
         <div className="election-tool">
             ElectionTool

@@ -16,7 +16,7 @@ export const useRegistration = () => {
 
     const voters = useSelector(selectVoters);
     const sortOrder = useSelector(selectSortOrder)
-    console.log("userRegistration",sortOrder);
+    ;
 
     const mode = useSelector(selectMode);
     const selectedVoterId = useSelector(selectSelectedVoterId);

@@ -1,6 +1,9 @@
 import { nanoid } from "nanoid";
-import { CREATE_BALLOT, SET_BALLOTS, SET_SELECTED_ELECTION_ID} from './actions';
-
+import {
+    CREATE_BALLOT,
+    SET_BALLOTS,
+    SET_SELECTED_ELECTION_ID,
+} from './actions';
 
 const initialState = {
     ballots: [],
@@ -25,12 +28,12 @@ export const ballotReducer = (state = initialState, action) => {
                 ...state,
                 ballots: action.payload.ballotsData
             }
-            case SET_SELECTED_ELECTION_ID:
-                console.log({payload: action.payload})
-                return {
-                    ...state,
-                    selectedElectionId: action.payload.electionId
-                }
+        case SET_SELECTED_ELECTION_ID:
+            
+            return {
+                ...state,
+                selectedElectionId: action.payload.electionId
+            }
         default:
             return state;
     }

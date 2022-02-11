@@ -4,8 +4,6 @@ export const BallotForm = ({ voter, election }) => {
     const initialValues = { responses: election.questions.map(q => false) }
     const { form, setForm } = useForm(initialValues)
 
-    console.log({ voter, election, form })
-
     const Row = ({ i, question, response }) => {
         const id = `ballot-form-row-${i}`
 

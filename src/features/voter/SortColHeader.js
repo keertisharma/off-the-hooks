@@ -12,7 +12,7 @@ export const SortColHeader = ({
                                   setSortOrder,
                                   editMode}) => {
 
-    console.log({col, sortOrder, editMode});
+    ;
 
 
     return (

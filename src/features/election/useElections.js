@@ -39,7 +39,7 @@ export const useElections = () => {
             });
         })
     }
-    console.log("ElectionHook", electionResults);
+    ;
 
     useEffect(() => {
         dispatch(fetchElections())

@@ -1,5 +1,6 @@
 export const ElectionTable = ({ elections, selectedElectionId, setSelectedElectionId }) => {
-    console.log({ elections })
+    
+
     return (
         <div className="election-list">
             ELECTION LIST
@@ -14,9 +15,9 @@ export const ElectionTable = ({ elections, selectedElectionId, setSelectedElecti
                 </thead>
                 <tbody>
                     {elections.map(election => {
-                        console.log({ election })
+                        
                         return (
-                            <tr>
+                            <tr key={election.id}>
                                 <td>{election.id}</td>
                                 <td className= {election.id === selectedElectionId? "selected":""}>
                                     {election.title}</td>
