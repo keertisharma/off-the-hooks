@@ -70,5 +70,28 @@
       "id": "oWiEAIit1iUdmINF31hs3"
     }
   ],
-  "ballots": []
+  "ballots": [{
+    "id": "dhks1",
+    "voterId": "RGdWNkLkIDyWbyndUq2NQ",
+    "electionId": "56YTcNhvmw_ZndnUdfr-0",
+    "responses": [
+      "Yes",
+      "No",
+      "Yes",
+      "Yes"
+    ]
+  },
+    {
+      "id": "jkjfks",
+      "voterId": "1",
+      "electionId": "56YTcNhvmw_ZndnUdfr-0",
+      "responses": [
+        "No",
+        "No",
+        "Yes",
+        "No"
+      ]
+
+    }
+  ]
 }
