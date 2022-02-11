@@ -4,6 +4,7 @@ export const CREATE_BALLOT = `${BALLOT_SLICE}/create-ballot`
 export const SET_BALLOTS = `${BALLOT_SLICE}/set-ballots`
 export const SET_BALLOT_VIEW_MODE = `${BALLOT_SLICE}/set-ballot-view-mode`
 export const SET_SELECTED_BALLOT_ID = `${BALLOT_SLICE}/set-selected-ballot-id`
+export const SET_SELECTED_ELECTION_ID = `${BALLOT_SLICE}/set-selected-election-id`
 
 export const createBallotAction = (voterId, electionId, ballotData) => ({
     type: CREATE_BALLOT,
@@ -13,6 +14,11 @@ export const createBallotAction = (voterId, electionId, ballotData) => ({
 export const createSetBallotsAction = (ballotsData) => ({
     type: SET_BALLOTS,
     payload: { ballotsData },
+})
+
+export const createSetSelectedElectionIdAction = (electionId) => ({
+    type: SET_SELECTED_ELECTION_ID,
+    payload: { electionId }
 })
 
 /*export const createSetBallotViewModeAction = (viewMode, electionId = null) => ({
