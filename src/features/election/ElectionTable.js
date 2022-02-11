@@ -22,7 +22,6 @@ export const ElectionTable = ({ elections, selectedElectionId, setSelectedElecti
                                     {election.title}</td>
                                 <td>{election.questions.length}</td>
                                 <td>
-                                    <button>show questions</button>
                                     <button type="button"
                                             onClick={() => setSelectedElectionId(election.id)}
                                     >show results</button>

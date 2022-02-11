@@ -25,6 +25,22 @@ export const useElections = () => {
 
     console.log ("ElectionHook", ballotsForSelectedElection, selectedElection);
 
+    let electionResults;
+
+    if (selectedElection) {
+        electionResults = selectedElection.questions.map((question) => ({
+            question, yes: 0, no: 0
+        }))
+
+
+        ballotsForSelectedElection.forEach((ballot) => {
+            ballot.responses.forEach((response, i) => {
+                electionResults[i][response.toLowerCase()] += 1;
+            });
+        })
+    }
+    console.log("ElectionHook", electionResults);
+
     useEffect(() => {
         dispatch(fetchElections())
         dispatch(fetchBallots())
@@ -59,6 +75,7 @@ export const useElections = () => {
         selectedElectionId,
         setSelectedElectionId,
         createElection,
+        electionResults,
     }
 }
 

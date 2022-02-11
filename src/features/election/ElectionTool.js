@@ -7,13 +7,15 @@ import { useElections } from './useElections';
 
 export const ElectionTool = () => {
 
-    const { elections, createElection, selectedElectionId, setSelectedElectionId } = useElections();
+    const { elections, createElection, selectedElectionId, setSelectedElectionId, electionResults } = useElections();
     console.log(elections);
     return (
         <div className="election-tool">
             ElectionTool
             <AddElectionForm submitText="Submit" onSubmit={createElection} />
-            <ElectionResults/>
+            { electionResults &&
+                <ElectionResults electionResults={electionResults}/>
+            }
             <ElectionTable
                 elections={elections}
                 selectedElectionId={selectedElectionId}
