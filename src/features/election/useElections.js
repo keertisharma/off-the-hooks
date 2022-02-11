@@ -2,13 +2,16 @@ import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
 
 import {
+    selectElectionById,
     selectElections,
     selectElectionViewMode,
     selectSelectedElectionId,
 } from "./store/selectors"
 import { nanoid } from "nanoid"
-import { createSetViewModeAction, createResetModeAction } from "../election/store/actions"
+import { createSetViewModeAction, createResetModeAction, createSetSelectedElectionIdAction } from "../election/store/actions"
 import { appendElections, fetchElections } from "./store/thunks"
+import {selectBallotsByElection} from "../ballot/store/selectors";
+import {fetchBallots} from "../ballot/store/thunks";
 
 
 export const useElections = () => {
@@ -17,9 +20,14 @@ export const useElections = () => {
     const elections = useSelector(selectElections)
     const mode = useSelector(selectElectionViewMode)
     const selectedElectionId = useSelector(selectSelectedElectionId)
+    const ballotsForSelectedElection = useSelector(selectBallotsByElection(selectedElectionId))
+    const selectedElection = useSelector((selectElectionById(selectedElectionId)));
+
+    console.log ("ElectionHook", ballotsForSelectedElection, selectedElection);
 
     useEffect(() => {
         dispatch(fetchElections())
+        dispatch(fetchBallots())
     }, [dispatch])
 
     const createElection = (electionData) => {
@@ -39,12 +47,17 @@ export const useElections = () => {
         dispatch(createSetViewModeAction(null))
     }
 
+    const setSelectedElectionId = (id) => {
+        dispatch(createSetSelectedElectionIdAction(id));
+    }
+
     return {
         elections,
         inAddMode: mode==='add',
         setAddMode,
         resetMode,
         selectedElectionId,
+        setSelectedElectionId,
         createElection,
     }
 }

@@ -20,7 +20,7 @@ export const createSetViewModeAction = (viewMode, electionId = null) => ({
     payload: { viewMode, electionId }
 })
 
-export const createSetSelectedElectionId = (electionId) => ({
+export const createSetSelectedElectionIdAction = (electionId) => ({
     type: SET_SELECTED_ELECTION_ID,
     payload: { electionId }
 })

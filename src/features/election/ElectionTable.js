@@ -1,4 +1,4 @@
-export const ElectionTable = ({ elections }) => {
+export const ElectionTable = ({ elections, selectedElectionId, setSelectedElectionId }) => {
     console.log({ elections })
     return (
         <div className="election-list">
@@ -18,11 +18,14 @@ export const ElectionTable = ({ elections }) => {
                         return (
                             <tr>
                                 <td>{election.id}</td>
-                                <td>{election.title}</td>
+                                <td className= {election.id === selectedElectionId? "selected":""}>
+                                    {election.title}</td>
                                 <td>{election.questions.length}</td>
                                 <td>
                                     <button>show questions</button>
-                                    <button>show results</button>
+                                    <button type="button"
+                                            onClick={() => setSelectedElectionId(election.id)}
+                                    >show results</button>
                                 </td>
                             </tr>
                         )
