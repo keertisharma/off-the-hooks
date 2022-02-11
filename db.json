@@ -70,17 +70,18 @@
       "id": "oWiEAIit1iUdmINF31hs3"
     }
   ],
-  "ballots": [{
-    "id": "dhks1",
-    "voterId": "RGdWNkLkIDyWbyndUq2NQ",
-    "electionId": "56YTcNhvmw_ZndnUdfr-0",
-    "responses": [
-      "Yes",
-      "No",
-      "Yes",
-      "Yes"
-    ]
-  },
+  "ballots": [
+    {
+      "id": "dhks1",
+      "voterId": "RGdWNkLkIDyWbyndUq2NQ",
+      "electionId": "56YTcNhvmw_ZndnUdfr-0",
+      "responses": [
+        "Yes",
+        "No",
+        "Yes",
+        "Yes"
+      ]
+    },
     {
       "id": "jkjfks",
       "voterId": "1",
@@ -91,7 +92,6 @@
         "Yes",
         "No"
       ]
-
     }
   ]
 }

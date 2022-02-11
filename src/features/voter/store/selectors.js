@@ -1,4 +1,3 @@
-import {voterReducer} from "./reducers";
 
 export const selectVoters = (state) => {
     const sortedVoters = [...state.voterTool.voters];
@@ -9,10 +8,10 @@ export const selectVoters = (state) => {
             const val1 = voter1[sortOrder.column];
             const val2 = voter2[sortOrder.column];
 
-            if (voter1[sortOrder.column] < voter2[sortOrder.column]) {
+            if (val1 < val2) {
                 return sortOrder.direction;
             }
-            if (voter1[sortOrder.column] > voter2[sortOrder.column]) {
+            if (val1 > val2) {
                 return -sortOrder.direction;
             }
             return 0;
