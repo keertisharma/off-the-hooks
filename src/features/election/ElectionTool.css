@@ -12,8 +12,28 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.add-election-form-row, input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 18px 0;
+    background-color: aquamarine;
+    box-sizing: border-box;
+}
+
+.add-election {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 1.2rem;
+    margin: 2rem 0;
+    width: 50%;
+}
+
 .add-election-form-row label {
     font-weight: 800;
+    color:darkslategray;
+    padding: 1rem;
+    font-family: Arial;
+    background-color: bisque;
 }
 
 .edit-election-form-row {
@@ -24,3 +44,13 @@
 .edit-election-form-row label {
     font-weight: 800;
 }
+
+/* input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+} */

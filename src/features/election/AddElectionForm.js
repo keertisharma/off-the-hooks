@@ -35,7 +35,7 @@ export const AddElectionForm = ({ submitText, onSubmit }) => {
     }
 
     return (
-        <div>
+        <div className="add-election">
             ADD ELECTION
             <Row label="Title" name="title" value={title} />
             {questions.map((question, i) =>

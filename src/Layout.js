@@ -8,7 +8,7 @@ export const Layout = () => {
     return (
 
         <div className="container">
-            <header>
+            <header className='app-header'>
                 <h1>Democracy Apps</h1>
             </header>
 
