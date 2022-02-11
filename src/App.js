@@ -4,6 +4,7 @@ import { RegistrationTool } from "./features/voter/RegistrationTool";
 import { ElectionTool } from "./features/election/ElectionTool";
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./Layout";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
