@@ -34,7 +34,7 @@ export const Layout = () => {
 
             <nav id="main-menu" className="navbar navbar-expand-lg navbar-light" >
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li className="nav-item"><Link to="/home">Home</Link></li>
+                    <li className="nav-item"><Link to="/">Home</Link></li>
                     <li className="nav-item"><Link to="/voting-tool">Voting Tool</Link></li>
                     <li className="nav-item"><Link to="/registration-tool">Registration Tool</Link></li>
                     <li className="nav-item"><Link to="/election-tool">Election Tool</Link></li>

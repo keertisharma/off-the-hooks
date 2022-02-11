@@ -204,3 +204,10 @@ h3.title {
     border-color: #B22222;
     font-weight: 600;
 }
+
+.btn-warning.goldenrod {
+    background-color: goldenrod;
+    color: white;
+    font-weight: 600;
+    border-color: goldenrod;
+}

@@ -1,6 +1,6 @@
 export const Home = () => {
     return (
-        <main role="main" className="container">
+        <main role="main" className="container home-container">
             <div className="starter-template">
                 <h1>Welcome to Off-The-Hook Election Emporium!</h1>
                 <ul>

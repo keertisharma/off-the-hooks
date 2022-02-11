@@ -37,9 +37,14 @@
   }
 }
 
-.starter-template {
+.home-container {
   margin-top: 8em;
+}
+
+.starter-template {
+  /* margin-top: 8em; */
   font-size: x-large;
+  z-index: 100;
 }
 
 .starter-template li {
