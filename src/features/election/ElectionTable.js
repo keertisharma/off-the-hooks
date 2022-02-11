@@ -1,5 +1,10 @@
-export const ElectionTable = ({ elections, selectedElectionId, setSelectedElectionId }) => {
-    
+export const ElectionTable = ({
+    elections,
+    ballotCounts,
+    selectedElectionId,
+    setSelectedElectionId,
+}) => {
+
     return (
         <div className="election-list">
             ELECTION LIST
@@ -9,21 +14,23 @@ export const ElectionTable = ({ elections, selectedElectionId, setSelectedElecti
                         <th>ID</th>
                         <th>Title</th>
                         <th>Number Questions</th>
+                        <th>Number Ballots</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {elections.map(election => {
-                        
+                    {elections.map((election,i) => {
+
                         return (
-                            <tr>
+                            <tr key={election.id}>
                                 <td>{election.id}</td>
-                                <td className= {election.id === selectedElectionId? "selected":""}>
+                                <td className={election.id === selectedElectionId ? "selected" : ""}>
                                     {election.title}</td>
                                 <td>{election.questions.length}</td>
+                                <td>{ballotCounts[i]}</td>
                                 <td>
                                     <button type="button"
-                                            onClick={() => setSelectedElectionId(election.id)}
+                                        onClick={() => setSelectedElectionId(election.id)}
                                     >show results</button>
                                 </td>
                             </tr>

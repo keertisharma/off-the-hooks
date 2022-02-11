@@ -23,7 +23,7 @@ export const RegistrationTool = () => {
         updateVoter,
     } = useRegistration()
 
-    ;
+        ;
 
     const toggleListDisplay = () => {
         if (inListMode) { resetMode() } else { setListMode() }
@@ -34,12 +34,15 @@ export const RegistrationTool = () => {
             <h2 className="center">
                 Registration Tool
             </h2>
-            <button
-                type="button"
-                onClick={setAddMode}
-            >
-                Register Voter
-            </button>
+
+            {!inAddMode &&
+                <button
+                    type="button"
+                    onClick={setAddMode}
+                >
+                    Register Voter
+                </button>
+            }
 
             {inAddMode &&
                 <AddVoterForm
@@ -52,15 +55,15 @@ export const RegistrationTool = () => {
             <button type="button" onClick={toggleListDisplay}>{inListMode ? "Hide Voters" : "Show Voters"}</button>
 
             {(inListMode || inEditMode) &&
-            <VoterTable voters={voters}
-                setEditMode={setEditMode}
-                inEditMode={inEditMode}
-                onCancel={resetMode}
-                selectedVoterId={selectedVoterId}
-                onDelete={onDelete}
-                onDeleteMultiple={onDeleteMultiple}
-                updateVoter={updateVoter}
-                sortOrder={sortOrder}
+                <VoterTable voters={voters}
+                    setEditMode={setEditMode}
+                    inEditMode={inEditMode}
+                    onCancel={resetMode}
+                    selectedVoterId={selectedVoterId}
+                    onDelete={onDelete}
+                    onDeleteMultiple={onDeleteMultiple}
+                    updateVoter={updateVoter}
+                    sortOrder={sortOrder}
                     setSortOrder={setSortOrder} />
             }
         </div>

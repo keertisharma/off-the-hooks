@@ -3,6 +3,8 @@ import { useBallot } from "./useBallot";
 import { ElectionTable } from "./ElectionTable";
 import { VoterLogin } from './VoterLogin';
 import { BallotForm } from './BallotForm';
+import { Success } from "./Success";
+import { Error } from "./Error";
 
 export const VotingTool = () => {
     const {
@@ -14,29 +16,45 @@ export const VotingTool = () => {
         inDefaultMode,
         inLoginMode,
         inErrorMode,
+        inSuccessMode,
         inVotingMode,
         onLoginSubmit,
-        onCancel
+        onCancel,
+        castVote,
+        error,
+        resetMode,
     } = useBallot();
 
-    
+
 
     return (
         <div>
             VotingTool
-            { inVotingMode &&
-               <BallotForm voter={selectedVoter} election={selectedElection} />
+            {inVotingMode && selectedElection && selectedVoter &&
+                <BallotForm
+                    voter={selectedVoter}
+                    election={selectedElection}
+                    castVote={castVote}
+                />
             }
-
-            { (inDefaultMode || inLoginMode) &&
-            <ElectionTable elections={elections}
-                setSelectedElectionId={setSelectedElectionId}
-                selectedElectionId={selectedElectionId} />
+            {(inDefaultMode || inLoginMode) &&
+                <ElectionTable
+                    elections={elections}
+                    setSelectedElectionId={setSelectedElectionId}
+                    selectedElectionId={selectedElectionId}
+                />
             }
-            {
-                inLoginMode && <VoterLogin onSubmit={onLoginSubmit} onCancel={onCancel} />
-            }    
-
+            {inLoginMode &&
+                <VoterLogin
+                    onSubmit={onLoginSubmit}
+                    onCancel={onCancel} />
+            }
+            {inSuccessMode &&
+                <Success resetMode={resetMode} />
+            }
+            {inErrorMode &&
+                <Error error={error} resetMode={resetMode} />
+            }
         </div>
     );
 }

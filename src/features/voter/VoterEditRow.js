@@ -29,7 +29,6 @@ export const VoterEditRow = ({
 
     const { first_name, last_name, address, city, birth_date, email, phone } = form
 
-
     return (
         <tr>
             <td>{id}</td>
@@ -41,7 +40,7 @@ export const VoterEditRow = ({
                        value={address} onChange={change} /></td>
             <td><input type="text" name="city"
                        value={city} onChange={change} /></td>
-            <td><input type="text" name="birthdate"
+            <td><input type="text" name="birth_date"
                        value={birth_date} onChange={change} /></td>
             <td><input type="text" name="email"
                        value={email} onChange={change} /></td>

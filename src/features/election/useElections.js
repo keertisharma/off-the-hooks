@@ -10,8 +10,11 @@ import {
 import { nanoid } from "nanoid"
 import { createSetViewModeAction, createResetModeAction, createSetSelectedElectionIdAction } from "../election/store/actions"
 import { appendElections, fetchElections } from "./store/thunks"
-import {selectBallotsByElection} from "../ballot/store/selectors";
-import {fetchBallots} from "../ballot/store/thunks";
+import {
+    selectBallotsByElection,
+    selectBallots,
+} from "../ballot/store/selectors";
+import { fetchBallots } from "../ballot/store/thunks";
 
 
 export const useElections = () => {
@@ -20,13 +23,15 @@ export const useElections = () => {
     const elections = useSelector(selectElections)
     const mode = useSelector(selectElectionViewMode)
     const selectedElectionId = useSelector(selectSelectedElectionId)
+    const ballots = useSelector(selectBallots)
     const ballotsForSelectedElection = useSelector(selectBallotsByElection(selectedElectionId))
     const selectedElection = useSelector((selectElectionById(selectedElectionId)));
 
-    console.log ("ElectionHook", ballotsForSelectedElection, selectedElection);
+    const ballotCounts = elections.map(e =>
+        ballots.filter(b => b.electionId === e.id).length
+    )
 
     let electionResults;
-
     if (selectedElection) {
         electionResults = selectedElection.questions.map((question) => ({
             question, yes: 0, no: 0
@@ -69,13 +74,14 @@ export const useElections = () => {
 
     return {
         elections,
-        inAddMode: mode==='add',
+        inAddMode: mode === 'add',
         setAddMode,
         resetMode,
         selectedElectionId,
         setSelectedElectionId,
         createElection,
         electionResults,
+        ballotCounts,
     }
 }
 

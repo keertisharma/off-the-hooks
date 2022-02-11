@@ -2,3 +2,8 @@
     display: grid;
     grid-template-columns: 1fr 3fr;
 }
+
+.ballot-form-row label {
+    display:flex;
+    flex-direction: row;
+}

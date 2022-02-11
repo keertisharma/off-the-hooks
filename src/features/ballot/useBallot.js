@@ -10,13 +10,27 @@ import { fetchVoters } from "../voter/store/thunks"
 import { selectVoters } from '../voter/store/selectors';
 
 // from ballot slice
-import { createSetSelectedElectionIdAction, createSetModeAction, createSetSelectedVoterIdAction } from "./store/actions";
-import { selectSelectedElectionId,selectMode, selectBallotsByElection, selectSelectedVoterId } from "./store/selectors";
-import { fetchBallots } from './store/thunks';
+import {
+    createSetSelectedElectionIdAction,
+    createSetModeAction,
+    createSetSelectedVoterIdAction,
+    createSetErrorAction,
+} from "./store/actions";
+import {
+    selectSelectedElectionId,
+    selectMode,
+    selectBallotsByElection,
+    selectSelectedVoterId,
+    selectError,
+} from "./store/selectors";
+import {
+    fetchBallots,
+    appendBallot,
+} from './store/thunks';
 
 
 export const useBallot = () => {
-    
+
 
     const dispatch = useDispatch()
 
@@ -26,9 +40,9 @@ export const useBallot = () => {
     const voters = useSelector(selectVoters)
     const ballotsForSelectedElection = useSelector(selectBallotsByElection(selectedElectionId))
     const selectedVoterId = useSelector(selectSelectedVoterId)
-    const selectedElection = elections.find(e => e.id ===  selectedElectionId)
-    const selectedVoter = voters.find(v => v.id ===  selectedVoterId)
-
+    const selectedElection = elections.find(e => e.id === selectedElectionId)
+    const selectedVoter = voters.find(v => v.id === selectedVoterId)
+    const error = useSelector(selectError)
 
     useEffect(() => {
         dispatch(fetchElections())
@@ -37,29 +51,51 @@ export const useBallot = () => {
     }, [dispatch])
 
     const setSelectedElectionId = (id) => {
-        
+
         dispatch(createSetSelectedElectionIdAction(id));
         dispatch(createSetModeAction("login"));
     }
 
-    const onLoginSubmit = ({email}) => {
-        // Validate Email
-        console.log(email);
+    const onLoginSubmit = ({ email }) => {
         const currentVoter = voters.find(c => c.email === email);
-        
-        if(!currentVoter){
-            // Redirect to Invalid User
+
+        if (!currentVoter) {
+            dispatch(createSetErrorAction('User Not Found'))
+            dispatch(createSetModeAction('error'));
+
+            return
         }
 
         const existingBallot = ballotsForSelectedElection.find(b => b.voterId === currentVoter.id);
 
-        if(existingBallot) {
-            // Redirect to Already Voted
+        if (existingBallot) {
+            dispatch(createSetErrorAction('User Has Already Voted In This Election!!!!!!!!!'))
+            dispatch(createSetModeAction('error'));
+            return
         }
 
         dispatch(createSetModeAction('voting'));
         dispatch(createSetSelectedVoterIdAction(currentVoter.id))
-        // selectedVoterId
+    }
+
+    const castVote = (selectedQuestions) => {
+        const ballot = {
+            voterId: selectedVoterId,
+            electionId: selectedElectionId,
+            responses: selectedElection.questions.map((q, i) => {
+                if (selectedQuestions.includes(i)) {
+                    return 'Yes'
+                } else {
+                    return 'No'
+                }
+            })
+        }
+        dispatch(appendBallot(ballot))
+        dispatch(createSetModeAction('success'))
+    }
+
+    const resetMode = () => {
+        dispatch(createSetModeAction('default'))
     }
 
     return {
@@ -71,9 +107,11 @@ export const useBallot = () => {
         inDefaultMode: mode === 'default',
         inLoginMode: mode === 'login',
         inErrorMode: mode === 'error',
+        error,
         inVotingMode: mode === 'voting',
+        inSuccessMode: mode === 'success',
         onLoginSubmit,
-        
+        castVote,
+        resetMode,
     };
-
 };

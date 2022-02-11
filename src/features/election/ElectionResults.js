@@ -11,9 +11,9 @@ export const ElectionResults = ({electionResults}) => {
             </tr>
             </thead>
             <tbody>
-            {electionResults.map((result) => {
+            {electionResults.map((result, i) => {
                 const {question, yes, no} = result;
-                return (<tr>
+                return (<tr key={i}>
                     <td>{question}</td>
                     <td>{yes}</td>
                     <td>{no}</td>

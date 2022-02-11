@@ -6,6 +6,7 @@ import {
     SET_MODE,
     RESET_MODE,
     SET_SELECTED_VOTER_ID,
+    SET_ERROR,
 } from './actions';
 
 const DEFAULT_MODE = 'default'
@@ -15,6 +16,7 @@ const initialState = {
     selectedElectionId: null,
     selectedVoterId: null,
     mode: DEFAULT_MODE,
+    error: '',
 }
 
 export const ballotReducer = (state = initialState, action) => {
@@ -36,7 +38,7 @@ export const ballotReducer = (state = initialState, action) => {
                 ballots: action.payload.ballotsData
             }
         case SET_SELECTED_ELECTION_ID:
-            
+
             return {
                 ...state,
                 selectedElectionId: action.payload.electionId
@@ -45,7 +47,7 @@ export const ballotReducer = (state = initialState, action) => {
             return {
                 ...state,
                 selectedVoterId: action.payload.voterId
-            }  
+            }
         case SET_MODE:
             return {
                 ...state,
@@ -55,6 +57,11 @@ export const ballotReducer = (state = initialState, action) => {
             return {
                 ...state,
                 mode: DEFAULT_MODE
+            }
+        case SET_ERROR:
+            return {
+                ...state,
+                error: action.payload.error
             }
         default:
             return state;

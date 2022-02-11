@@ -8,6 +8,7 @@ export const SET_SELECTED_ELECTION_ID = `${BALLOT_SLICE}/set-selected-election-i
 export const SET_MODE = `${BALLOT_SLICE}/set-mode`
 export const RESET_MODE = `${BALLOT_SLICE}/reset-mode`
 export const SET_SELECTED_VOTER_ID = `${BALLOT_SLICE}/set-selected-voter-id`
+export const SET_ERROR = `${BALLOT_SLICE}/set-error`
 
 export const createBallotAction = (voterId, electionId, ballotData) => ({
     type: CREATE_BALLOT,
@@ -36,20 +37,10 @@ export const createSetModeAction = (mode) => ({
 
 export const createResetModeAction = () => ({
     type: SET_MODE,
-    payload: { mode:null }
+    payload: { mode: null }
 })
 
-/*export const createSetBallotViewModeAction = (viewMode, electionId = null) => ({
-    type: SET_BALLOT_VIEW_MODE,
-    payload: { viewMode, electionId }
+export const createSetErrorAction = (error) => ({
+    type: SET_ERROR,
+    payload: { error }
 })
-
-export const createSetSelectedElectionIdAction = (electionId) => ({
-    type: SET_SELECTED_ELECTION_ID,
-    payload: { electionId }
-})
-
-export const createResetModeAction = () => ({
-    type: SET_VIEW_MODE,
-    payload: { mode:null }
-})*/
