@@ -17,7 +17,7 @@ export const VoterViewRow = memo(({
             {!inEditMode &&
                 <td>{selector}</td>
             }
-            <td>{voter.id}</td>
+            
             <td>{voter.first_name}</td>
             <td>{voter.last_name}</td>
             <td>{voter.address}</td>

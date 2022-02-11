@@ -32,7 +32,7 @@ export const VoterEditRow = ({
 
     return (
         <tr>
-            <td>{id}</td>
+            {/* <td>{id}</td> */}
             <td><input type="text" name="first_name"
                 value={first_name} onChange={change} /></td>
             <td><input type="text" name="last_name"

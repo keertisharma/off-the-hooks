@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 
 const cols = [
-    { field: 'id', label: 'Id' },
+    // { field: 'id', label: 'Id' },
     { field: 'first_name', label: 'First Name' },
     { field: 'last_name', label: 'Last Name' },
     { field: 'address', label: 'Address' },

@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.starter-template {
+  margin-top: 8em;
+  font-size: x-large;
+}
+
+.starter-template li {
+  font-family: cursive;
+  color:red;
+  font-size: xx-large;
+  font-weight: 900;
+  list-style-type: disc;
+  margin-left: 5em;
+  margin-top: 1em;
+}
