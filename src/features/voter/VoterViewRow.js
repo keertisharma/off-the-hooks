@@ -1,6 +1,6 @@
 //import PropTypes from 'prop-types';
 import { memo } from 'react';
-import { FaAirFreshener } from "react-icons/fa";
+// import { FaAirFreshener } from "react-icons/fa";
 
 //import { voterPropType } from './voterToolPropTypes';
 

@@ -34,7 +34,7 @@ export const RegistrationTool = () => {
             <h2 className="center">
                 Registration Tool
             </h2>
-            <u
+            <button
                 type="button"
                 onClick={setAddMode}
             >
