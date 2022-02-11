@@ -42,21 +42,29 @@ export const useRegistration = () => {
         dispatch(createSetModeAction('edit'))
         dispatch(createSetSelectedVoterIdAction(id))
     }
+    const setListMode = (id) => {
+        dispatch(createSetModeAction('list'))
+        dispatch(createSetSelectedVoterIdAction(id))
+    }
     const resetMode = () => {
         dispatch(createResetModeAction())
     }
     const onDelete = (id) => {
         dispatch(deleteVoter(id))
-        dispatch(createResetModeAction())
+        dispatch(createSetModeAction('list'))
     }
     const updateVoter = (voterData, id) => {
-        dispatch(replaceVoter(voterData))
-        dispatch(createResetModeAction())
+        const voter = ({
+            ...voterData,
+            id: id
+        })
+        dispatch(replaceVoter(voter))
+        dispatch(createSetModeAction('list'))
     }
 
     const onDeleteMultiple = (ids) => {
         dispatch(deleteMultipleVoter(ids))
-        dispatch(createResetModeAction())
+        dispatch(createSetModeAction('list'))
     }
 
     const setSortOrder = (column) => {
@@ -71,10 +79,12 @@ export const useRegistration = () => {
         voters,
         sortOrder,
         setSortOrder,
+        inListMode: mode === 'list',
         inEditMode: mode === 'edit',
         inAddMode: mode === 'add',
         setAddMode,
         setEditMode,
+        setListMode,
         resetMode, 
         selectedVoterId,
         registerVoter,

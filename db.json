@@ -1,36 +1,6 @@
 {
   "voters": [
     {
-      "first_name": "Joe",
-      "last_name": "G.I.",
-      "address": "2121 Still Lane",
-      "city": "Sad Miego",
-      "birth_date": "1/1/2000",
-      "email": "nobody@nuttin.com",
-      "phone": "555-333-1212",
-      "id": 1
-    },
-    {
-      "first_name": "jdkjd",
-      "last_name": "dkhkds",
-      "address": "kdsfds",
-      "city": "fhdkdf",
-      "birth_date": "fjhf",
-      "email": "djkdjf",
-      "phone": "jkjfhkds",
-      "id": "RGdWNkLkIDyWbyndUq2NQ"
-    },
-    {
-      "first_name": "d",
-      "last_name": "e",
-      "address": "f",
-      "city": "g",
-      "birth_date": "h",
-      "email": "i",
-      "phone": "j",
-      "id": "1IJA4ejZYJX0aczuu-lvR"
-    },
-    {
       "first_name": "Ashwin",
       "last_name": "Devadiga",
       "address": "10116 Douglas Oaks Circle Apt 203",
@@ -39,6 +9,16 @@
       "email": "devadiga.ashwin45@gmail.com",
       "phone": "03132886716",
       "id": "mzfXizqzbyY2aJIIHO_BL"
+    },
+    {
+      "first_name": "abe",
+      "last_name": "vegeta",
+      "address": "21",
+      "city": "eso",
+      "birth_date": "2019",
+      "email": "@",
+      "phone": "999",
+      "id": "gMlMDOFcCsgEXiaeVhVpw"
     }
   ],
   "elections": [
@@ -83,29 +63,5 @@
       ]
     }
   ],
-  "ballots": [{
-    "id": "dhks1",
-    "voterId": "RGdWNkLkIDyWbyndUq2NQ",
-    "electionId": "56YTcNhvmw_ZndnUdfr-0",
-    "responses": [
-      "Yes",
-      "No",
-      "Yes",
-      "Yes"
-    ]
-  },
-    {
-      "id": "jkjfks",
-      "voterId": "1",
-      "electionId": "56YTcNhvmw_ZndnUdfr-0",
-      "responses": [
-        "No",
-        "No",
-        "Yes",
-        "No"
-      ]
-
-    }
-  ]
-
+  "ballots": []
 }

@@ -78,7 +78,7 @@ export const AddVoterForm = ({ onSubmit, onCancel }) => {
 
             <div className="form-group row mt-4">
                 <div className="col-sm-1"></div>
-                <button type="button" className="btn btn-primary col-sm-2 " onClick={submit}>Submit</button>
+                <button type="button" className="btn btn-primary col-sm-2 " onClick={submit}>Complete Registration</button>
                 <div className="col-sm-2"></div>
                 <button type="button" className="btn btn-secondary col-sm-2" onClick={cancel}>Cancel</button>
             </div>

@@ -13,6 +13,8 @@ export const RegistrationTool = () => {
         setAddMode,
         inEditMode,
         setEditMode,
+        inListMode,
+        setListMode,
         resetMode,
         selectedVoterId,
         registerVoter,
@@ -23,6 +25,10 @@ export const RegistrationTool = () => {
 
     console.log("RegistrationTool", sortOrder);
 
+    const toggleListDisplay = () => {
+        if (inListMode) { resetMode() } else { setListMode() }
+    }
+
     return (
         <div>
             <h2 className="center">
@@ -32,8 +38,8 @@ export const RegistrationTool = () => {
                 type="button"
                 onClick={setAddMode}
             >
-                Add Voter
-            </u>
+                Register Voter
+            </button>
 
             {inAddMode &&
                 <AddVoterForm
@@ -43,6 +49,9 @@ export const RegistrationTool = () => {
                 />
             }
 
+            <button type="button" onClick={toggleListDisplay}>{inListMode ? "Hide Voters" : "Show Voters"}</button>
+
+            {(inListMode || inEditMode) &&
             <VoterTable voters={voters}
                 setEditMode={setEditMode}
                 inEditMode={inEditMode}
@@ -52,8 +61,8 @@ export const RegistrationTool = () => {
                 onDeleteMultiple={onDeleteMultiple}
                 updateVoter={updateVoter}
                 sortOrder={sortOrder}
-                setSortOrder={ setSortOrder}/>
+                    setSortOrder={setSortOrder} />
+            }
         </div>
-
     );
 }
