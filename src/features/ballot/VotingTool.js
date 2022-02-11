@@ -28,7 +28,7 @@ export const VotingTool = () => {
 
     return (
         <div>
-            VotingTool
+            <h3 className="title">Voting Tool</h3>
             {inVotingMode && selectedElection && selectedVoter &&
                 <BallotForm
                     voter={selectedVoter}

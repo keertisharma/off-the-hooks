@@ -18,7 +18,7 @@ export const ElectionTool = () => {
     ;
     return (
         <div className="election-tool">
-            ElectionTool
+            <h3 className="title">Election Tool</h3>
             <AddElectionForm submitText="Submit" onSubmit={createElection} />
             {electionResults &&
                 <ElectionResults electionResults={electionResults} />

@@ -181,3 +181,7 @@ h3.slogan {
     color: white;
     font-size: 22px;
 }
+
+h3.title {
+    padding-left: 40%;
+}

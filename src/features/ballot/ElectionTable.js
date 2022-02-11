@@ -4,7 +4,7 @@ export const ElectionTable = ({ elections, selectedElectionId, setSelectedElecti
     return (
         <div className="election-list">
             ELECTION LIST
-            <table>
+            <table className="table">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -23,7 +23,7 @@ export const ElectionTable = ({ elections, selectedElectionId, setSelectedElecti
                                     {election.title}</td>
                                 <td>{election.questions.length}</td>
                                 <td>
-                                    <button type="button"
+                                    <button type="button" className="btn btn-success"
                                             onClick={() => setSelectedElectionId(election.id)}
                                     >Vote</button>
                                 </td>
