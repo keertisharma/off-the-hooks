@@ -27,60 +27,60 @@ export const AddVoterForm = ({ onSubmit, onCancel }) => {
 
     return (<>
         <form>
-            <div class="form-group row">
-                <div class="col-sm-6">
-                    ADD VOTER
+            <div className="form-group row">
+                <div className="col-sm-6">
+                    {/* ADD VOTER */}
                 </div>
             </div>
-            <div class="form-group"></div>
-            <div class="form-group row mt-6">
-                <label class="col-sm-2 col-form-label" >First Name </label>
-                <div class="col-sm-4">
-                    <input name={'first_name'} value={first_name} class="form-control" onChange={change} />
+            <div className="form-group"></div>
+            <div className="form-group row mt-6">
+                <label className="col-sm-2 col-form-label" >First Name </label>
+                <div className="col-sm-4">
+                    <input name={'first_name'} value={first_name} className="form-control" onChange={change} />
                 </div>
             </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Last Name</label>
-                <div class="col-sm-4">
-                    <input name={'last_name'} value={last_name} class="form-control" onChange={change} />
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Last Name</label>
+                <div className="col-sm-4">
+                    <input name={'last_name'} value={last_name} className="form-control" onChange={change} />
                 </div>
             </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Address</label>
-                <div class="col-sm-4">
-                    <input name={'address'} value={address} class="form-control" onChange={change} />
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Address</label>
+                <div className="col-sm-4">
+                    <input name={'address'} value={address} className="form-control" onChange={change} />
                 </div>
             </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">City</label>
-                <div class="col-sm-4">
-                    <input name={'city'} value={city} class="form-control" onChange={change} />
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">City</label>
+                <div className="col-sm-4">
+                    <input name={'city'} value={city} className="form-control" onChange={change} />
                 </div>
             </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Birth Date</label>
-                <div class="col-sm-4">
-                    <input name={'birth_date'} value={birth_date} class="form-control" onChange={change} />
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Birth Date</label>
+                <div className="col-sm-4">
+                    <input name={'birth_date'} value={birth_date} className="form-control" onChange={change} />
                 </div>
             </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-4">
-                    <input name={'email'} value={email} class="form-control" onChange={change} />
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Email</label>
+                <div className="col-sm-4">
+                    <input name={'email'} value={email} className="form-control" onChange={change} />
                 </div>
             </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Phone</label>
-                <div class="col-sm-4">
-                    <input name={'phone'} value={phone} class="form-control" onChange={change} />
+            <div className="form-group row">
+                <label className="col-sm-2 col-form-label">Phone</label>
+                <div className="col-sm-4">
+                    <input name={'phone'} value={phone} className="form-control" onChange={change} />
                 </div>
             </div>
 
-            <div class="form-group row">
-                <div class="col-sm-1"></div>
-                <button type="button" class="btn btn-primary col-sm-2 " onClick={submit}>Submit</button>
-                <div class="col-sm-2"></div>
-                <button type="button" class="btn btn-secondary col-sm-2" onClick={cancel}>Cancel</button>
+            <div className="form-group row mt-4">
+                <div className="col-sm-1"></div>
+                <button type="button" className="btn btn-primary col-sm-2 " onClick={submit}>Submit</button>
+                <div className="col-sm-2"></div>
+                <button type="button" className="btn btn-secondary col-sm-2" onClick={cancel}>Cancel</button>
             </div>
         </form>
     </>

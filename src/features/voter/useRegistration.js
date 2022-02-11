@@ -50,11 +50,7 @@ export const useRegistration = () => {
         dispatch(createResetModeAction())
     }
     const updateVoter = (voterData, id) => {
-        const voter = ({
-            ...voterData,
-            id: id
-        })
-        dispatch(replaceVoter(voter))
+        dispatch(replaceVoter(voterData))
         dispatch(createResetModeAction())
     }
 

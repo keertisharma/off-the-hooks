@@ -25,15 +25,15 @@ export const RegistrationTool = () => {
 
     return (
         <div>
-            <div>
-                RegistrationTool
-            </div>
-            <button
+            <h2 className="center">
+                Registration Tool
+            </h2>
+            <u
                 type="button"
                 onClick={setAddMode}
             >
                 Add Voter
-            </button>
+            </u>
 
             {inAddMode &&
                 <AddVoterForm
@@ -53,12 +53,6 @@ export const RegistrationTool = () => {
                 updateVoter={updateVoter}
                 sortOrder={sortOrder}
                 setSortOrder={ setSortOrder}/>
-
-            <button
-                type="button"
-                onClick={onDeleteMultiple}>
-                Delete Voter Testing
-            </button>
         </div>
 
     );

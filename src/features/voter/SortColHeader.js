@@ -16,11 +16,11 @@ export const SortColHeader = ({
 
 
     return (
-        <th>
-            <button type="button" onClick={() => setSortOrder(col.field)}>
+        <th scope="col" onClick={() => setSortOrder(col.field)} >
+            {/* <button type="button" onClick={() => setSortOrder(col.field)}> */}
                 {col.label}
                 {showSortDir(sortOrder, col)}
-            </button>
+            {/* </button> */}
         </th>
     );
 

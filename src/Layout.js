@@ -12,12 +12,12 @@ export const Layout = () => {
                 <h1>Democracy Apps</h1>
             </header>
 
-            <nav id="main-menu">
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/voting-tool">Voting Tool</Link></li>
-                    <li><Link to="/registration-tool">Registration Tool</Link></li>
-                    <li><Link to="/election-tool">Election Tool</Link></li>
+            <nav id="main-menu" className="navbar navbar-expand-lg navbar-light bg-light" >
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li className="nav-item"><Link to="/">Home</Link></li>
+                    <li className="nav-item"><Link to="/voting-tool">Voting Tool</Link></li>
+                    <li className="nav-item"><Link to="/registration-tool">Registration Tool</Link></li>
+                    <li className="nav-item"><Link to="/election-tool">Election Tool</Link></li>
                 </ul>
             </nav>
 
@@ -25,9 +25,9 @@ export const Layout = () => {
                 <Outlet />
             </main>
 
-            <aside id="sidebar">
+            {/* <aside id="sidebar">
                 sidebar
-            </aside>
+            </aside> */}
 
 
             <footer id="page-footer">

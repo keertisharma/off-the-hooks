@@ -14,6 +14,7 @@ export const VoterEditRow = ({
     const { form, change, resetForm } = useForm(voterFormData)
 
     const submit = () => { 
+        console.log(" ID in Save ", id)
         onSubmit(
             { ...form,
                 id: id }
