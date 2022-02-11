@@ -2,7 +2,7 @@ import { useForm } from "../../hooks/useForm"
 
 const initialForm = {
     title: '',
-    questions: ['', '']
+    questions: '',
 }
 
 export const AddElectionForm = ({ submitText, onSubmit }) => {
@@ -12,35 +12,21 @@ export const AddElectionForm = ({ submitText, onSubmit }) => {
 
     const submit = () => {
         onSubmit({
-            "id": 1,
-            "title": "Bridge of Doom",
-            "questions": [
-              "What is your name?",
-              "What is your favorite color?",
-              "What is your quest?",
-              "What is the airspeed velocity of an unladen swallow?"
-            ]
-          })
-    }
-
-    const Row = ({ label, name, value }) => {
-        const id = `add-election-form-row-${name}`
-
-        return (
-            <div className="add-election-form-row">
-                <label htmlFor={id}>{label}</label>
-                <input name={name} value={value} id={id} onChange={change} />
-            </div>
-        )
+            title,
+            questions: questions.split("\n"),
+        })
+        resetForm()
     }
 
     return (
         <div className="add-election">
             ADD ELECTION
-            <Row label="Title" name="title" value={title} />
-            {questions.map((question, i) =>
-                <Row label={`Question ${i + 1}`} name={`question-${i + 1}`} value={question} />
-            )}
+            <label>Title
+                <input name="title" value={title} onChange={change} />
+            </label>
+            <label>Questions
+                <textarea name="questions" value={questions} onChange={change} />
+            </label>
 
             <button type="button" onClick={submit}>{submitText}</button>
         </div>
