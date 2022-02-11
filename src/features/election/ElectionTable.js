@@ -29,7 +29,7 @@ export const ElectionTable = ({
                                 <td>{election.questions.length}</td>
                                 <td>{ballotCounts[i]}</td>
                                 <td>
-                                    <button type="button" className="btn btn-danger"
+                                    <button type="button" className="btn btn-danger purple"
                                         onClick={() => setSelectedElectionId(election.id)}
                                     >show results</button>
                                 </td>

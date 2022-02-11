@@ -31,7 +31,7 @@ export const VoterViewRow = memo(({
                     onClick={() => setEditMode(voter.id)}>
                     Edit</button>
                     <p></p>
-                <button type="button" className='btn btn-danger'
+                <button type="button" className='btn btn-danger purple'
                     onClick={() => onDelete(voter.id)}>
                     Delete</button>
             </td>

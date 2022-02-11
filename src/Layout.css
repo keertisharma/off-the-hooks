@@ -189,3 +189,18 @@ h3.slogan {
 h3.title {
     padding-left: 40%;
 }
+
+
+.btn-danger.purple {
+    color: #fff;
+    background-color: rgb(156, 10, 90);
+    border-color: rgb(156, 10, 119);
+    font-weight: 600;
+}
+
+.btn-danger.purple:hover{
+    color: #fff;
+    background-color: #B22222;
+    border-color: #B22222;
+    font-weight: 600;
+}
