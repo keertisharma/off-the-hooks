@@ -8,9 +8,30 @@ export const Layout = () => {
     return (
 
         <div className="container">
-            <header className='app-header'>
-                <h1>Democracy Apps</h1>
-            </header>
+            {/* <header className='app-header'> */}
+                <div className='row header-color'>
+                    <div className='col-md-6'>
+                        <h1>Off the Hooks Voting App</h1>
+                    </div>
+                    <div class="col-md-4"><h3 className='slogan'>So passeth a worthy opponent</h3> </div>
+                    <div className='col-md-1'>
+
+                    </div>
+                    <div className='col-md-1'>
+                        
+                    </div>
+                </div>
+
+            <div class="row header-color">
+                <div class="col-md-6"><h1></h1></div>
+                <div class="col-md-2"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-1">
+                    <img alt="logo" src="logo.png"/>
+                </div>
+            </div>
+                
+            {/* </header> */}
 
             <nav id="main-menu" className="navbar navbar-expand-lg navbar-light bg-light" >
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -31,7 +52,7 @@ export const Layout = () => {
 
 
             <footer id="page-footer">
-                <small>&copy; 2022 KechCo Company, Inc.</small>
+                <small>&copy; 2022 Off the Hook Company, Inc.</small>
             </footer>
         </div>
 

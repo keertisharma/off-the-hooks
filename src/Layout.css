@@ -72,7 +72,7 @@ body {
 }
 
 #page-header, #page-footer {
-    background-color: navy;
+    background-color: #B22222;
     color: white;
 }
 
@@ -96,6 +96,7 @@ body {
     padding: 0 20px;
     display: flex;
     align-items: center;
+    width: 70%;
 }
 
 #main-menu > ul {
@@ -168,4 +169,15 @@ form {
 
 h2.center {
     padding-left: 40%;
+}
+
+.row.header-color {
+    background-color: goldenrod;
+}
+
+h3.slogan {
+    font-style: italic;
+    padding-top: 11px;
+    color: white;
+    font-size: 22px;
 }
