@@ -19,6 +19,36 @@
       "email": "@",
       "phone": "999",
       "id": "gMlMDOFcCsgEXiaeVhVpw"
+    },
+    {
+      "first_name": "Keerti",
+      "last_name": "Sharma",
+      "address": "12061 Celome Lane",
+      "city": "San Diego",
+      "birth_date": "2000",
+      "email": "keerti_sharma@intuit.com",
+      "phone": "858-603-5103",
+      "id": "hjhfjds089e93"
+    },
+    {
+      "first_name": "Jeremiah",
+      "last_name": "Kent",
+      "address": "64767 Hook St",
+      "city": "San Diego",
+      "birth_date": "1979",
+      "email": "jeremiah_kent@intuit.com",
+      "phone": "858-674-9020",
+      "id": "hjhfjds089yuee93"
+    },
+    {
+      "first_name": "Okechi",
+      "last_name": "Osuagwu",
+      "address": "763 Okechi St",
+      "city": "San Diego",
+      "birth_date": "1998",
+      "email": "okechi_osuagwu@intuit.com",
+      "phone": "858-899-9070",
+      "id": "hjhfjds089yuee945"
     }
   ],
   "elections": [
@@ -60,6 +90,18 @@
         "What is your favorite color?",
         "What is your quest?",
         "What is the airspeed velocity of an unladen swallow?"
+      ]
+    },
+    {
+      "id": "hjkhjkhfjdwhf832",
+      "title": "Party Questions",
+      "questions": [
+        "A pregnant goldfish is called a twit?",
+        "Women can read smaller print than men?",
+        "Men can hear better than women?",
+        "Every day more money is printed for monopoly than the US Treasury?",
+        "The words - Poor and poverty - appear 446 times in 384 separate verses in the Bible?",
+        "Michael Jordan was cut from his high school basketball team?"
       ]
     },
     {
