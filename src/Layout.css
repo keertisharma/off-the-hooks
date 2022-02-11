@@ -87,11 +87,12 @@ body {
 
 #page-header > h1 {
     font-size: 2rem;
+    background-color: darkgoldenrod;
 }
 
 #main-menu {
     grid-area: menu;
-    background-color: lightgray;
+    background-color: darkgray;
     padding: 0 20px;
     display: flex;
     align-items: center;
